@@ -1,0 +1,6 @@
+{
+    "group":     "@@group-ID",
+    "contacts":  ["Amrapali Zaveri", "Michel Dumontier", "Chunlei Wu"],
+    "shortName": "smartApi",
+    "policy":    "open"
+}
