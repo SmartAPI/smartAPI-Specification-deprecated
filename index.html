@@ -5,6 +5,7 @@
     <meta charset='utf-8'>
     <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
+	<script type="text/javascript" src="http://www.w3.org/2007/OWL/toggles.js"></script>
     <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
@@ -140,6 +141,25 @@
         </ul>
       </p>
     </section>
+    
+<script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<div class="buttonpanel">
+<form action=""><p>
+<input id="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
+<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
+<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
+<input id="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
+<input id="hide-json" onclick="show_syntaxes(bFSSVisible,false); set_display_by_id('hide-json','none'); set_display_by_id('show-json','');" style="display: none" type="button" value="Hide JSON in Examples" />
+<input id="show-json" onclick="show_syntaxes(bFSSVisible,true); set_display_by_id('hide-json',''); set_display_by_id('show-json','none');" type="button" value="Show JSON in Examples" />
+</p>
+</form>
+</div>    
+
+<div class="image">
+<p><img alt="The Structure of OWL 2 Ontologies" border="0" height="60" src="mustshouldmay.jpg" width="175" /><br />
+<span class="caption">Figure 1.</span> Must, Should, May
+</p>
+</div>
    
     <section id="apimd">
       <h2>API Metadata</h2>
@@ -157,12 +177,8 @@
                                 <td>A human readable label for the API.</td>
                             </tr>
                             <tr>
-                                <td><a href="#website">Website</a></td>
-                                <td>A web page that describes the API.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#category">Category</a></td>
-                                <td>Primary category that the API belongs to.</td>
+                                <td><a href="#access-point">Access Point</a></td>
+                                <td>The base URI for interacting with the API.</td>
                             </tr>
                             <tr>
                                 <td><a href="#desc">Description</a></td>
@@ -173,10 +189,6 @@
                                 <td>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</td>
                             </tr>
                             <tr>
-                                <td><a href="#publications">Publications</a></td>
-                                <td>Publication ID/URL.</td>
-                            </tr>
-                            <tr>
                                 <td><a href="#documentation">Documentation</a></td>
                                 <td>Documentation page URL for the API.</td>
                             </tr>
@@ -184,11 +196,7 @@
                                 <td><a href="#terms-of-service">Terms of Service</a></td>
                                 <td>A document that describes the terms of use for the API.</td>
                             </tr>
-                            <tr>
-                                <td><a href="#api-access-restrictions">API Access Restrictions</a></td>
-                                <td>Indicate whether there are restrictions to using the API</td>
-                            </tr>
-                            <tr>
+                             <tr>
                                 <td><a href="#authentication-mode">Authentication Mode</a></td>
                                 <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
                             </tr>
@@ -201,13 +209,21 @@
                                 <td>Indication of whether SSL Support is present or absent.</td>
                             </tr>
                             <tr>
-                                <td><a href="#social-media-links">Social Media Links</a></td>
-                                <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
+                                <td><a href="#website">Website</a></td>
+                                <td>A web page that describes the API.</td>
                             </tr>
                             <tr>
-                                <td><a href="#access-point">Access Point</a></td>
-                                <td>The base URI for interacting with the API.</td>
-                            </tr>
+                                <td><a href="#category">Category</a></td>
+                                <td>Primary category that the API belongs to.</td>
+                            </tr> 
+                            <tr>
+                                <td><a href="#publications">Publications</a></td>
+                                <td>Publication ID/URL.</td>
+                            </tr>    
+                           <tr>
+                                <td><a href="#api-access-restrictions">API Access Restrictions</a></td>
+                                <td>Indicate whether there are restrictions to using the API</td>
+                            </tr>                                                                               
                             <tr>
                                 <td><a href="#access-point-mirrors">Access Point Mirrors</a></td>
                                 <td>URL of the mirror that the API is available at.</td>
@@ -231,154 +247,313 @@
                             <tr>
                                 <td><a href="#api-maturity">API Maturity</a></td>
                                 <td>Maturity of the API.</td>
-                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                        
+                            </tr>  
+                            <tr>
+                                <td><a href="#social-media-links">Social Media Links</a></td>
+                                <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
+                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                  
                         </tbody>
                     </table>
 
      <section id="name">     
       <h3>Name</h3>
-      <p> Example:
-       <code></code>
+      <div class="example">
+       <p>
+		<code>code</code>
         <pre class="highlight"> 
-        
+          example
         </pre>
-      </p> 
-     </section>
-        
-     <section id="website">     
-      <h3>Website</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br /></p>
+	    </div>
+	  </div>       
      </section>
      
-     <section id="category">     
-      <h3>Category</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+    <section id="access-point">     
+      <h3>Access Point</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>    
      </section>
-     
+
      <section id="desc">     
       <h3>Description</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
-     
+
      <section id="response-mime-type">     
       <h3>Response Mime-Type</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
-     
-     <section id="publications">     
-      <h3>Publications</h3>
-      <p> Example:
-       <code></code>
-      </p> 
-     </section>
-     
+
      <section id="documentation">     
       <h3>Documentation</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
-     
+
      <section id="terms-of-service">     
       <h3>Terms of Service</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
-     
-     <section id="access-restrictions">     
-      <h3>API Access Restrictions</h3>
-      <p> Example:
-       <code></code>
-      </p> 
-     </section>
-     
+
      <section id="authentication-mode">     
       <h3>Authentication Mode</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
      
      <section id="version">     
       <h3>Version</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
      
      <section id="ssl-support">     
       <h3>SSL Support</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div>  
      </section>
-   
-     <section id="social-media-links">     
-      <h3>Social Media Links</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+                                      
+     <section id="website">     
+      <h3>Website</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
-     <section id="access-point">     
-      <h3>Access Point</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+     <section id="category">     
+      <h3>Category</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
+     <section id="publications">     
+      <h3>Publications</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+     
+     <section id="access-restrictions">     
+      <h3>API Access Restrictions</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+    
      <section id="access-point-mirrors">     
       <h3>Access Point Mirros</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
      <section id="api-metadata-format">     
       <h3>API Metadata Format</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>                                                                           
     
      <section id="api-access-mode">     
       <h3>API Access Mode</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
          
      <section id="api-location">     
       <h3>API Location</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
          
      <section id="api-implementation-language">     
       <h3>API Implementation Language</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
          
      <section id="api-maturity">     
       <h3>API Maturity</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>
-     </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
     </section>
+    
+    <section id="social-media-links">     
+      <h3>Social Media Links</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
    
     <section id="spmd">
       <h2>Service Provider Metadata</h2>
@@ -420,44 +595,92 @@
      
      <section id="responsible-organization">     
       <h3>Responsible Organization</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
 
      <section id="responsible-developer">     
       <h3>Responsible Developer</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>   
      
      <section id="contact-email">     
       <h3>Contact Email</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>   
 
      <section id="contributor">     
       <h3>Contributor</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>        
 
      <section id="funding">     
       <h3>Funding</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>        
 
      <section id="developer-forum">     
       <h3>Developer Forum</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
     </p>  
@@ -479,12 +702,20 @@
                                 <td>Title of the operation. A unique identifier of the operation.</td>
                             </tr>
                             <tr>
-                                <td><a href="#operation-id">Operation ID</a></td>
-                                <td>An identifier/URI for the operation.</td>
-                            </tr>
-                            <tr>
                                 <td><a href="#operation-description">Operation Description</a></td>
                                 <td>Description of the operation.</td>
+                            </tr>
+                             <tr>
+                                <td><a href="#http-method">http Method</a></td>
+                                <td>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#authentication-mode">Authentication Mode</a></td>
+                                <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#operation-id">Operation ID</a></td>
+                                <td>An identifier/URI for the operation.</td>
                             </tr>
                             <tr>
                                 <td><a href="#keywords">Keywords</a></td>
@@ -495,17 +726,10 @@
                                 <td>Documentation of the particular operation.</td>
                             </tr>
                             <tr>
-                                <td><a href="#http-method">http Method</a></td>
-                                <td>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL.</td>
-                            </tr>
-                            <tr>
                                 <td><a href="#path-template">Path Template</a></td>
                                 <td>The path for the operation.</td>
                             </tr>
-                            <tr>
-                                <td><a href="#authentication-mode">Authentication Mode</a></td>
-                                <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
-                            </tr>
+
                             <tr>
                                 <td><a href="#access-restrictions">Access Restrictions</a></td>
                                 <td>Access restrictions to invoke the operation.</td>
@@ -518,72 +742,152 @@
                     </table>               
      <section id="operation-title">     
       <h3>Operation Title</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>
-  
-     <section id="operation-id">     
-      <h3>Operation ID</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
      <section id="operation-description">     
       <h3>Operation Description</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
-     
-     <section id="keywords">     
-      <h3>Keywords</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>
-     
-     <section id="operation-documentation">     
-      <h3>Operation Documentation</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>
-     
+
      <section id="http-method">     
       <h3>http Method</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>
-     
-     <section id="path-template">     
-      <h3>Path Template</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
      <section id="authentication-mode">     
       <h3>Authentication Mode</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>     
+     
+     <section id="operation-id">     
+      <h3>Operation ID</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+          
+     <section id="keywords">     
+      <h3>Keywords</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
+     <section id="operation-documentation">     
+      <h3>Operation Documentation</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+         
+     <section id="path-template">     
+      <h3>Path Template</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+         
      <section id="access-restrictions">     
       <h3>Access Restrictions</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
      <section id="collection">     
       <h3>Collection</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>                                             
 
       </p>     
@@ -605,6 +909,26 @@
                                 <td>Name of the operation parameter.</td>
                             </tr>
                             <tr>
+                                <td><a href="#location">Location</a></td>
+                                <td>Determines the location of the parameter.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#parameter-type">Parameter Type</a></td>
+                                <td>Type of parameter.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#parameter-value-type">Parameter Value Type</a></td>
+                                <td>Type of the value of the particular parameter.</td>
+                            </tr>
+                             <tr>
+                                <td><a href="#consumes">Consumes</a></td>
+                                <td>A list of MIME types the operation can consume.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#transfer-protocol">Transfer Protocol</a></td>
+                                <td>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss".</td>
+                            </tr>                             
+                            <tr>
                                 <td><a href="#operation-parameter-description">Operation Parameter Description</a></td>
                                 <td>Description of service parameter.</td>
                             </tr>
@@ -616,30 +940,11 @@
                                 <td><a href="#max">Max</a></td>
                                 <td>Maximum occurrence of the parameter.</td>
                             </tr>
-                            <tr>
-                                <td><a href="#parameter-type">Parameter Type</a></td>
-                                <td>Type of parameter.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#parameter-value-type">Parameter Value Type</a></td>
-                                <td>Type of the value of the particular parameter.</td>
-                            </tr>
-                            <tr>
+                           <tr>
                                 <td><a href="#data-format">Data Format</a></td>
                                 <td>Input/Output data format.</td>
                             </tr>
-                            <tr>
-                                <td><a href="#location">Location</a></td>
-                                <td>Determines the location of the parameter.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#consumes">Consumes</a></td>
-                                <td>A list of MIME types the operation can consume.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#transfer-protocol">Transfer Protocol</a></td>
-                                <td>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss".</td>
-                            </tr>
+
                             <tr>
                                 <td><a href="#default-value">Default Value</a></td>
                                 <td>Default value for each input/output.</td>
@@ -653,86 +958,182 @@
 
      <section id="operation-parameter-name">     
       <h3>Operation Parameter Name</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>  
-     
-     <section id="operation-parameter-name">     
-      <h3>Operation Parameter Description</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>  
-
-     <section id="min">     
-      <h3>Min</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>  
 
-     <section id="max">     
-      <h3>Max</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+     <section id="location">     
+      <h3>Location</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>  
      
      <section id="parameter-type">     
       <h3>Parameter Type</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>  
      
      <section id="parameter-valuu-type">     
       <h3>Parameter Value Type</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>  
-     
-     <section id="data-format">     
-      <h3>Data Format</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>  
-     
-     <section id="location">     
-      <h3>Location</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
-     </section>  
-     
-     <section id="consumes">     
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section> 
+ 
+      <section id="consumes">     
       <h3>Consumes</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>  
      
      <section id="transfer-protocol">     
       <h3>Transfer Protocol</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>  
+              
+     <section id="operation-parameter-name">     
+      <h3>Operation Parameter Description</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>  
+
+     <section id="min">     
+      <h3>Min</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>  
+
+     <section id="max">     
+      <h3>Max</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>   
+     
+     <section id="data-format">     
+      <h3>Data Format</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>  
      
      <section id="default-value">     
       <h3>Default Value</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section> 
      
      <section id="example-value">     
       <h3>Example Value</h3>
-      <p> Example:
-       <code>mygene.info</code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>                                                                                
         
       </p>
@@ -750,15 +1151,6 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="#response-code">Response Code</a></td>
-                                <td>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
-The list of possible responses as they are returned from executing this operation.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#response-desc">Response Description</a></td>
-                                <td>A description of the response.</td>
-                            </tr>
-                            <tr>
                                 <td><a href="#response-format">Response Format</a></td>
                                 <td>A list of MIME types the APIs can consume.</td>
                             </tr>
@@ -769,6 +1161,15 @@ The list of possible responses as they are returned from executing this operatio
                             <tr>
                                 <td><a href="#example-response-value">Example Response Value</a></td>
                                 <td>An example of the response value.</td>
+                            </tr> 
+                            <tr>
+                                <td><a href="#response-code">Response Code</a></td>
+                                <td>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
+The list of possible responses as they are returned from executing this operation.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#response-desc">Response Description</a></td>
+                                <td>A description of the response.</td>
                             </tr>
                             <tr>
                                 <td><a href="#response-profile">Response Profile</a></td>
@@ -777,50 +1178,96 @@ The list of possible responses as they are returned from executing this operatio
                         </tbody>
                     </table>    
   
-     <section id="response-code">     
-      <h3>Response Code</h3>
-      <p> Example:
-       <code></code>
-      </p> 
-     </section>
-     
-    <section id="response-desc">     
-      <h3>Response Description</h3>
-      <p> Example:
-       <code></code>
-      </p> 
-     </section>
-     
     <section id="response-format">     
       <h3>Response Format</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
     <section id="response-header">     
       <h3>Response Header</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
     <section id="example-response-value">     
       <h3>Example Response Value</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+          
+     <section id="response-code">     
+      <h3>Response Code</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+
+    <section id="response-desc">     
+      <h3>Response Description</h3>
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
      
     <section id="response-profile">     
       <h3>Response Profile</h3>
-      <p> Example:
-       <code></code>
-      </p> 
+      <div class="example">
+       <p>
+		<code>code</code>
+        <pre class="highlight"> 
+          example
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
      </section>
-                           
- 
-      </p>
+     </p>
     </section>    
     
     <section class='appendix'>
