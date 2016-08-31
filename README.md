@@ -5,7 +5,9 @@ The smartAPI specification specifies core and extended API metadata elements tha
 ## Authors
 
 Michel Dumontier
+
 Chunlei Wu
+
 Amrapali Zaveri
 
 ## Link
