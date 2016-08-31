@@ -8,9 +8,9 @@ The smartAPI specification specifies core and extended API metadata elements tha
 
 @@info-about-group-and-editors
 
-## @@details
+## Link
 
-@@whatever
+https://amrapalijz.github.io/smartapi/
 
 ## Credits
 
