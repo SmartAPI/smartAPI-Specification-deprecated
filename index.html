@@ -13,6 +13,8 @@
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "smartAPI",
+          
+          charterDisclosureURI : "http://www.w3.org/2004/01/pp-impl/64149/status",
 
           // if your specification has a subtitle that goes below the main
           // formal title, define it here
@@ -265,9 +267,8 @@
       <h3>Name</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "name": "MyGene.info API"
         </pre>
        </p>
        <div class="image">
@@ -295,9 +296,8 @@
       <h3>Description</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "description": "Documentation of the MyGene.info Gene Query web services. Learn more about [MyGene.info](http://mygene.info/)"
         </pre>
        </p>
        <div class="image">
@@ -310,9 +310,8 @@
       <h3>Response Mime-Type</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "produces": [ "application/json" ]
         </pre>
        </p>
        <div class="image">
@@ -370,9 +369,8 @@
       <h3>Version</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "version": "2.0.0"
         </pre>
        </p>
        <div class="image">
@@ -753,9 +751,8 @@
       <h3>Operation Title</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "name": "q"
         </pre>
        </p>
        <div class="image">
@@ -783,9 +780,8 @@
       <h3>http Method</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "httpOperation": "get"
         </pre>
        </p>
        <div class="image">
@@ -813,9 +809,8 @@
       <h3>Operation ID</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "operationId": "queryGenes"
         </pre>
        </p>
        <div class="image">
@@ -830,7 +825,7 @@
        <p>
 		<code>code</code>
         <pre class="highlight"> 
-          example
+          "tags": [ "query" ]
         </pre>
        </p>
        <div class="image">
@@ -858,9 +853,8 @@
       <h3>Path Template</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "path": "/query"
         </pre>
        </p>
        <div class="image">
@@ -969,9 +963,8 @@
       <h3>Operation Parameter Name</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "name": "q"
         </pre>
        </p>
        <div class="image">
@@ -984,9 +977,8 @@
       <h3>Location</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "in": "query"
         </pre>
        </p>
        <div class="image">
@@ -1044,9 +1036,11 @@
       <h3>Transfer Protocol</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+            "schemes": [
+              "http",
+              "https"
+                       ]
         </pre>
        </p>
        <div class="image">
@@ -1059,9 +1053,8 @@
       <h3>Operation Parameter Description</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "description": "multiple query terms seperated by comma (also support \"+\" or white space), but no wildcard, e.g., \"q=1017,1018\" or \"q=CDK2+BTK\""
         </pre>
        </p>
        <div class="image">
@@ -1104,9 +1097,8 @@
       <h3>Data Format</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "format": "string"
         </pre>
        </p>
        <div class="image">
@@ -1236,9 +1228,8 @@ The list of possible responses as they are returned from executing this operatio
       <h3>Response Code</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "httpCode": 200
         </pre>
        </p>
        <div class="image">
@@ -1251,9 +1242,8 @@ The list of possible responses as they are returned from executing this operatio
       <h3>Response Description</h3>
       <div class="example">
        <p>
-		<code>code</code>
         <pre class="highlight"> 
-          example
+          "description": "Successful response"
         </pre>
        </p>
        <div class="image">
