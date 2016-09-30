@@ -162,12 +162,6 @@
 </p>
 </form>
 </div>    
-
-<div class="image">
-<p><img alt="The Structure of OWL 2 Ontologies" border="0" height="60" src="mustshouldmay.jpg" width="175" /><br />
-<span class="caption">Figure 1.</span> Must, Should, May
-</p>
-</div>
    
     <section id="apimd">
       <h2>API Metadata</h2>
@@ -177,88 +171,109 @@
                             <tr>
                                 <th>Metadata Element</th>
                                 <th>Definition</th>
+                                <th>Recommendation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#name">Name</a></td>
                                 <td>A human readable label for the API.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#access-point">Access Point</a></td>
                                 <td>The base URI for interacting with the API.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#desc">Description</a></td>
                                 <td>A human readable description of the service functionality.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#response-mime-type">Response MIME-type</a></td>
                                 <td>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#documentation">Documentation</a></td>
                                 <td>Documentation page URL for the API.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#terms-of-service">Terms of Service</a></td>
                                 <td>A document that describes the terms of use for the API.</td>
+                                <td>SHOULD</td>
                             </tr>
                              <tr>
                                 <td><a href="#authentication-mode">Authentication Mode</a></td>
                                 <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#version">Version</a></td>
                                 <td>The version of the API.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#ssl-support">SSL Support</a></td>
                                 <td>Indication of whether SSL Support is present or absent.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#website">Website</a></td>
                                 <td>A web page that describes the API.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#category">Category</a></td>
                                 <td>Primary category that the API belongs to.</td>
+                                <td>MAY</td>
                             </tr> 
                             <tr>
                                 <td><a href="#publications">Publications</a></td>
                                 <td>Publication ID/URL.</td>
+                                <td>MAY</td>
                             </tr>    
                            <tr>
                                 <td><a href="#api-access-restrictions">API Access Restrictions</a></td>
                                 <td>Indicate whether there are restrictions to using the API</td>
+                                <td>MAY</td>
                             </tr>                                                                               
                             <tr>
                                 <td><a href="#access-point-mirrors">Access Point Mirrors</a></td>
                                 <td>URL of the mirror that the API is available at.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#api-metadata-format">API Metadata Format</a></td>
                                 <td>Service specification format.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#api-access-mode">API Access Mode</a></td>
                                 <td>The protocols used to access the API</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#api-location">API Location</a></td>
                                 <td>Location, city and country of the API.</td>
+                                <td>MAY</td>
                             </tr>                                                        
                             <tr>
                                 <td><a href="#api-implementation-language">API Implementation Language</a></td>
                                 <td>Language the API was written in.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#api-maturity">API Maturity</a></td>
                                 <td>Maturity of the API.</td>
+                                <td>MAY</td>
                             </tr>  
                             <tr>
                                 <td><a href="#social-media-links">Social Media Links</a></td>
                                 <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
+                                <td>MAY</td>
                             </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                  
                         </tbody>
                     </table>
@@ -554,32 +569,39 @@
                             <tr>
                                 <th>Metadata Element</th>
                                 <th>Definition</th>
+                                <td>Recommendation</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#responsible-organization">Responsible Organization</a></td>
                                 <td>The identifying name of the contact person/organization.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#responsible-developer">Responsible Developer</a></td>
                                 <td>Name of the developer (User ID/Name)</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#contact-email">Contact Email</a></td>
                                 <td>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#contributor">Contributor</a></td>
                                 <td>Contributor person or institute.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#funding">Funding</a></td>
                                 <td>Source of funding.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#developer-forum">Developer Forum</a></td>
                                 <td>Forum or Mailing list.</td>
+                                <td>MAY</td>
                             </tr>                                                        
                         </tbody>
                     </table>        
@@ -679,49 +701,69 @@
                             <tr>
                                 <th>Metadata Element</th>
                                 <th>Definition</th>
+                                <td>Recommendation</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#title">Operation Title</a></td>
                                 <td>Title of the operation. A unique identifier of the operation.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#operation-description">Operation Description</a></td>
                                 <td>Description of the operation.</td>
+                                <td>MUST</td>
                             </tr>
-                             <tr>
+                            <tr>
+                                <td><a href="#http-method">Consumes</a></td>
+                                <td>A list of MIME types the operation can consume.</td>
+                                <td>SHOULD</td>
+                            </tr>
+                            <tr>
                                 <td><a href="#http-method">http Method</a></td>
                                 <td>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#authentication-mode">Authentication Mode</a></td>
                                 <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
-                                <td><a href="#operation-id">Operation ID</a></td>
-                                <td>An identifier/URI for the operation.</td>
+                                <td><a href="#operation-id">Transfer Protocol</a></td>
+                                <td>The transfer protocol of the API.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#keywords">Keywords</a></td>
                                 <td>Keywords describing the operation.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#operation-documentation">Operation Documentation</a></td>
-                                <td>Documentation of the particular operation.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#path-template">Path Template</a></td>
                                 <td>The path for the operation.</td>
+                                <td>MAY</td>
                             </tr>
-
+                            <tr>
+                                <td><a href="#operation-id">Operation ID</a></td>
+                                <td>An identifier/URI for the operation.</td>
+                                <td>MAY</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#operation-documentation">Operation Documentation</a></td>
+                                <td>Documentation of the particular operation.</td>
+                                <td>MAY</td>
+                            </tr>
                             <tr>
                                 <td><a href="#access-restrictions">Access Restrictions</a></td>
                                 <td>Access restrictions to invoke the operation.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#collection">Collection</a></td>
                                 <td>Names of collections of which the resource is a part e.g. a suite, library etc.</td>
+                                <td>MAY</td>
                             </tr>                                                                                                                                                                     
                         </tbody>
                     </table>               
@@ -876,57 +918,60 @@
                             <tr>
                                 <th>Metadata Element</th>
                                 <th>Definition</th>
+                                <td>Recommendation</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#operation-parameter-name">Operation Parameter Name</a></td>
                                 <td>Name of the operation parameter.</td>
+                                <td>MUST</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#operation-parameter-name">Operation Parameter Description</a></td>
+                                <td>Description of the operation parameter.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#location">Location</a></td>
                                 <td>Determines the location of the parameter.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#parameter-type">Parameter Type</a></td>
                                 <td>Type of parameter.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#parameter-value-type">Parameter Value Type</a></td>
                                 <td>Type of the value of the particular parameter.</td>
-                            </tr>
-                             <tr>
-                                <td><a href="#consumes">Consumes</a></td>
-                                <td>A list of MIME types the operation can consume.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#transfer-protocol">Transfer Protocol</a></td>
-                                <td>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss".</td>
-                            </tr>                             
-                            <tr>
-                                <td><a href="#operation-parameter-description">Operation Parameter Description</a></td>
-                                <td>Description of service parameter.</td>
+                                <td>SHOULD</td>
                             </tr>
                             <tr>
                                 <td><a href="#min">Min</a></td>
                                 <td>Minimum occurrence of the parameter.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#max">Max</a></td>
                                 <td>Maximum occurrence of the parameter.</td>
+                                <td>MAY</td>
                             </tr>
                            <tr>
                                 <td><a href="#data-format">Data Format</a></td>
                                 <td>Input/Output data format.</td>
+                                <td>MAY</td>
                             </tr>
 
                             <tr>
                                 <td><a href="#default-value">Default Value</a></td>
                                 <td>Default value for each input/output.</td>
+                                <td>MAY</td>
                             </tr>                                                                                                                                                                         
                             <tr>
                                 <td><a href="#example-value">Example Value</a></td>
                                 <td>Example value for each input/output.</td>
+                                <td>MAY</td>
                             </tr>  
                         </tbody>
                     </table>     
@@ -1113,33 +1158,40 @@
                             <tr>
                                 <th>Metadata Element</th>
                                 <th>Definition</th>
+                                <th>Recommendation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#response-format">Response Format</a></td>
                                 <td>A list of MIME types the APIs can consume.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#response-header">Response Header</a></td>
-                                <td>A list of headers that are sent with the response.</td>
+                                <td>MUST</td>
                             </tr>
                             <tr>
                                 <td><a href="#example-response-value">Example Response Value</a></td>
                                 <td>An example of the response value.</td>
+                                <td>SHOULD</td>
                             </tr> 
+                            <tr>
+                                <td><a href="#response-header">Response Header</a></td>
+                                <td>A list of headers that are sent with the response.</td>
+                                <td>MAY</td>
+                            </tr>
                             <tr>
                                 <td><a href="#response-code">Response Code</a></td>
                                 <td>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
 The list of possible responses as they are returned from executing this operation.</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#response-desc">Response Description</a></td>
                                 <td>A description of the response.</td>
+                                <td>MAY</td>                                
                             </tr>
                             <tr>
                                 <td><a href="#response-profile">Response Profile</a></td>
                                 <td>Conformance to a specified format.</td>
+                                <td>MAY</td>                                
                             </tr>
                         </tbody>
                     </table>    
