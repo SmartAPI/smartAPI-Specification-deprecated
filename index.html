@@ -194,25 +194,20 @@
                                 <td><a href="#response-mime-type">Response MIME-type</a></td>
                                 <td>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</td>
                                 <td>SHOULD</td>
-                            </tr>
+                            </tr>                            
                             <tr>
                                 <td><a href="#documentation">Documentation</a></td>
                                 <td>Documentation page URL for the API.</td>
                                 <td>SHOULD</td>
                             </tr>
                             <tr>
-                                <td><a href="#terms-of-service">Terms of Service</a></td>
-                                <td>A document that describes the terms of use for the API.</td>
-                                <td>SHOULD</td>
-                            </tr>
-                             <tr>
-                                <td><a href="#authentication-mode">Authentication Mode</a></td>
-                                <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
-                                <td>SHOULD</td>
-                            </tr>
-                            <tr>
                                 <td><a href="#version">Version</a></td>
                                 <td>The version of the API.</td>
+                                <td>SHOULD</td>
+                            </tr>                            
+                            <tr>
+                                <td><a href="#terms-of-service">Terms of Service</a></td>
+                                <td>A document that describes the terms of use for the API.</td>
                                 <td>SHOULD</td>
                             </tr>
                             <tr>
@@ -220,9 +215,9 @@
                                 <td>Indication of whether SSL Support is present or absent.</td>
                                 <td>SHOULD</td>
                             </tr>
-                            <tr>
-                                <td><a href="#website">Website</a></td>
-                                <td>A web page that describes the API.</td>
+							<tr>
+                                <td><a href="#authentication-mode">Authentication Mode</a></td>
+                                <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
                                 <td>SHOULD</td>
                             </tr>
                             <tr>
@@ -230,6 +225,11 @@
                                 <td>Primary category that the API belongs to.</td>
                                 <td>MAY</td>
                             </tr> 
+                            <tr>
+                                <td><a href="#website">Website</a></td>
+                                <td>A web page that describes the API.</td>
+                                <td>SHOULD</td>
+                            </tr>
                             <tr>
                                 <td><a href="#publications">Publications</a></td>
                                 <td>Publication ID/URL.</td>
@@ -239,7 +239,12 @@
                                 <td><a href="#api-access-restrictions">API Access Restrictions</a></td>
                                 <td>Indicate whether there are restrictions to using the API</td>
                                 <td>MAY</td>
-                            </tr>                                                                               
+                            </tr>     
+                            <tr>
+                                <td><a href="#social-media-links">Social Media Links</a></td>
+                                <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
+                                <td>MAY</td>
+                            </tr>                                                                                                        
                             <tr>
                                 <td><a href="#access-point-mirrors">Access Point Mirrors</a></td>
                                 <td>URL of the mirror that the API is available at.</td>
@@ -269,12 +274,7 @@
                                 <td><a href="#api-maturity">API Maturity</a></td>
                                 <td>Maturity of the API.</td>
                                 <td>MAY</td>
-                            </tr>  
-                            <tr>
-                                <td><a href="#social-media-links">Social Media Links</a></td>
-                                <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
-                                <td>MAY</td>
-                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                 
                         </tbody>
                     </table>
 
@@ -347,34 +347,6 @@
 	    </div>
 	  </div>  
      </section>
-
-     <section id="terms-of-service">     
-      <h3>Terms of Service</h3>
-      <div class="example">
-       <p>
-       <pre class="highlight"> 
-          "terms of service": "http://mygene.info/terms/"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
-     </section>
-
-     <section id="authentication-mode">     
-      <h3>Authentication Mode</h3>
-      <div class="example">
-       <p>
-       <pre class="highlight"> 
-          "authentication mode": "none"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
-     </section>
      
      <section id="version">     
       <h3>Version</h3>
@@ -382,6 +354,20 @@
        <p>
        <pre class="highlight"> 
           "version": "2.0.0"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
+	    </div>
+	  </div>  
+     </section>     
+
+     <section id="terms-of-service">     
+      <h3>Terms of Service</h3>
+      <div class="example">
+       <p>
+       <pre class="highlight"> 
+          "terms of service": "http://mygene.info/terms/"
         </pre>
        </p>
        <div class="image">
@@ -402,20 +388,20 @@
 		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
 	    </div>
 	  </div>  
-     </section>
-                                      
-     <section id="website">     
-      <h3>Website</h3>
+     </section>     
+
+     <section id="authentication-mode">     
+      <h3>Authentication Mode</h3>
       <div class="example">
        <p>
        <pre class="highlight"> 
-          "website": "http://mygene.info/"
+          "authentication mode": "none"
         </pre>
        </p>
        <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
 	    </div>
-	  </div> 
+	  </div>  
      </section>
      
      <section id="category">     
@@ -431,7 +417,21 @@
 	    </div>
 	  </div> 
      </section>
-     
+                                      
+     <section id="website">     
+      <h3>Website</h3>
+      <div class="example">
+       <p>
+       <pre class="highlight"> 
+          "website": "http://mygene.info/"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+          
      <section id="publications">     
       <h3>Publications</h3>
       <div class="example">
@@ -459,6 +459,21 @@
 	    </div>
 	  </div> 
      </section>
+
+    <section id="social-media-links">     
+      <h3>Social Media Links</h3>
+      <div class="example">
+       <p>
+       <pre class="highlight"> 
+          "social media links": "Twitter: @mygeneinfo"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+	  </p>
+     </section>     
     
      <section id="access-point-mirrors">     
       <h3>Access Point Mirrors</h3>
@@ -544,20 +559,7 @@
 	  </div> 
     </section>
     
-    <section id="social-media-links">     
-      <h3>Social Media Links</h3>
-      <div class="example">
-       <p>
-       <pre class="highlight"> 
-          "social media links": "Twitter: @mygeneinfo"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-	  </p>
-     </section>
+
     </p>
    </section>
    
@@ -688,8 +690,7 @@
 		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
 	    </div>
 	  </div> 
-     </section>
-     
+     </section>     
     </p>  
     </section>    
    
@@ -779,8 +780,7 @@
 		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
 	    </div>
 	  </div> 
-     </section>
-     
+     </section>     
      <section id="operation-description">     
       <h3>Operation Description</h3>
       <div class="example">
@@ -794,7 +794,19 @@
 	    </div>
 	  </div> 
      </section>
-
+     <section id="http-method">     
+      <h3>Consumes</h3>
+      <div class="example">
+       <p>
+        <pre class="highlight"> 
+          "consumes": "application/json"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
      <section id="http-method">     
       <h3>http Method</h3>
       <div class="example">
@@ -823,12 +835,26 @@
 	  </div> 
      </section>     
      
-     <section id="operation-id">     
-      <h3>Operation ID</h3>
+     <section id="authentication-mode">     
+      <h3>Transfer Protocol</h3>
       <div class="example">
        <p>
-        <pre class="highlight"> 
-          "operation ID": "queryGene"
+       <pre class="highlight"> 
+          "transfer protocol": "http"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
+	    </div>
+	  </div> 
+     </section> 
+
+     <section id="keywords">     
+      <h3>Keywords</h3>
+      <div class="example">
+       <p>
+       <pre class="highlight"> 
+          "keywords": [ "query" ]
         </pre>
        </p>
        <div class="image">
@@ -836,13 +862,27 @@
 	    </div>
 	  </div> 
      </section>
-          
-     <section id="keywords">     
-      <h3>Keywords</h3>
+     
+     <section id="path-template">     
+      <h3>Path Template</h3>
       <div class="example">
        <p>
-       <pre class="highlight"> 
-          "keywords": [ "query" ]
+        <pre class="highlight"> 
+          "path template": "/query"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>     
+               
+     <section id="operation-id">     
+      <h3>Operation ID</h3>
+      <div class="example">
+       <p>
+        <pre class="highlight"> 
+          "operation ID": "queryGene"
         </pre>
        </p>
        <div class="image">
@@ -864,21 +904,7 @@
 	    </div>
 	  </div> 
      </section>
-         
-     <section id="path-template">     
-      <h3>Path Template</h3>
-      <div class="example">
-       <p>
-        <pre class="highlight"> 
-          "path template": "/query"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-         
+
      <section id="access-restrictions">     
       <h3>Access Restrictions</h3>
       <div class="example">
@@ -906,8 +932,7 @@
 	    </div>
 	  </div> 
      </section>                                             
-
-      </p>     
+     </p>     
     </section>
    
     <section id="opmd">
@@ -989,6 +1014,20 @@
 	    </div>
 	  </div> 
      </section>  
+          
+     <section id="operation-parameter-name">     
+      <h3>Operation Parameter Description</h3>
+      <div class="example">
+       <p>
+        <pre class="highlight"> 
+          "description": "multiple query terms seperated by comma (also support \"+\" or white space), but no wildcard, e.g., \"q=1017,1018\" or \"q=CDK2+BTK\""
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+	    </div>
+	  </div> 
+     </section>  
 
      <section id="location">     
       <h3>Location</h3>
@@ -1032,51 +1071,6 @@
 	  </div> 
      </section> 
  
-      <section id="consumes">     
-      <h3>Consumes</h3>
-      <div class="example">
-       <p>
-       <pre class="highlight"> 
-          "consumes": "text/plain; charset=utf-8"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div> 
-     </section>  
-     
-     <section id="transfer-protocol">     
-      <h3>Transfer Protocol</h3>
-      <div class="example">
-       <p>
-        <pre class="highlight"> 
-            "schemes": [
-              "http",
-              "https"
-                       ]
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div> 
-     </section>  
-              
-     <section id="operation-parameter-name">     
-      <h3>Operation Parameter Description</h3>
-      <div class="example">
-       <p>
-        <pre class="highlight"> 
-          "description": "multiple query terms seperated by comma (also support \"+\" or white space), but no wildcard, e.g., \"q=1017,1018\" or \"q=CDK2+BTK\""
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>  
-
      <section id="min">     
       <h3>Min</h3>
       <div class="example">
@@ -1146,8 +1140,7 @@
 	    </div>
 	  </div> 
      </section>                                                                                
-        
-      </p>
+     </p>
     </section>
 
     <section id="ormd">
@@ -1209,21 +1202,7 @@ The list of possible responses as they are returned from executing this operatio
 	    </div>
 	  </div> 
      </section>
-     
-    <section id="response-header">     
-      <h3>Response Header</h3>
-      <div class="example">
-       <p>
-       <pre class="highlight"> 
-          "response header": "application/json"
-        </pre>
-       </p>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-     
+
     <section id="example-response-value">     
       <h3>Example Response Value</h3>
       <div class="example">
@@ -1238,6 +1217,20 @@ The list of possible responses as they are returned from executing this operatio
 	  </div> 
      </section>
           
+    <section id="response-header">     
+      <h3>Response Header</h3>
+      <div class="example">
+       <p>
+       <pre class="highlight"> 
+          "response header": "application/json"
+        </pre>
+       </p>
+       <div class="image">
+		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
+	    </div>
+	  </div> 
+     </section>
+               
      <section id="response-code">     
       <h3>Response Code</h3>
       <div class="example">
@@ -1281,8 +1274,7 @@ The list of possible responses as they are returned from executing this operatio
      </section>
      </p>
     </section>   
- 
-    
+     
     <section class='appendix'>
       <h2>Acknowledgements</h2>
       <p>
