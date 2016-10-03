@@ -111,29 +111,89 @@
   <body>
     <section id='abstract'>
       <p>
-        The smartAPI specification.
+        At present, no universal and comprehensive standard exists for the design of APIs. Consequently, development costs are inflated and communication between APIs is hindered. The Big Data to Knowledge (BD2K) API Interoperability Working Group (a W3C Interest Group) has developed the smartAPI Specification, a standard for API development that will facilitate the efficient communication among APIs and reduce development costs. This Specification document describes five categories of API metadata elements related to APIs, service providers, API operations, operation parameters, and operation responses. For each category, the metadata elements that are mandatory, recommended, or optional are described. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.
       </p>
     </section>
     
     <section id='sotd'>
       <p>
-        You need to have a custom SotD paragraph. Maybe give a succinct description of your spec's
-        status.
+        You need to have a custom SotD paragraph. Maybe give a succinct description of your spec's status.
       </p>
     </section>
     
     <section>
       <h2>Introduction</h2>
-      <p>
-        The smartAPI specification is...
+      <p>      
+      	<h3>Vision for API Interoperability</h3>
+        <p>In 2001, Sir Tim Berners Lee and colleagues articulated a vision in which intelligent agents would be able to navigate a web of knowledge in order to achieve objectives set by both humans and machines. While a significant part of the effort to build a Semantic Web has been devoted to defining a common syntax and semantics for data, it is the behavior of web services or web Application Programming Interfaces (APIs) to respond to requests in a manner that enables autonomous discovery and reuse that has been largely neglected. Here, we build on this vision for autonomous computing by setting out a technical roadmap that identifies essential behaviours to make web services FAIR - Findable, Accessible, Interoperable, and Reusable.</p>
+ 
+		<p><i><u>Self-Describing.</u></i> Knowledge of what the service offers and how to invoke it is essential to its reuse. Additional metadata, such as licensing, version, request and response formats, and forums for support, are also important practical considerations. However, few web APIs reliably provide such a description, thereby forcing agents to look for and sift through documentation. Similarly, the results of a service often lack hypermedia controls in their responses that explicitly indicate further interactions - whether paging through results or invoking another operation on any one of the results. Towards addressing these issues, we recommend the following actions:
+		Provide structured and standardized machine readable metadata for the API, operations, parameters, and response. (e.g. openAPI initiative, DCAT)
+		Provide hypermedia controls to automate further interaction (e.g. Hydra)
+		Ensure that API responses are not dead ends that need further analysis, but directly contain links to other services and (meta)data descriptions (e.g. JSON-LD).</p>
+ 
+		<p><i><u>Discoverable.</u></i> To help agents identify APIs of interest not only necessitates good and interoperable metadata, but also requires that they be indexed and searchable. Can some part of the output of an API be used as input to another API?
+		Register your API in one or more API repositories (e.g. ProgrammableWeb, BioCatalogue, smartAPI repository).
+		Publish API documentation using HTML microdata formats that can be indexed by search engines (e.g. schema.org).</p> 
+		
+		<p><i><u>Modular.</u></i> In order to facilitate the interaction between a client and different APIs, as well as the process to design and describe them, we propose to build Web APIs out of reusable features rather than as monolithic structures. A feature is an independent part of an interface that identifies, describes, and affords a certain kind of interaction across Web APIs. Through repositories of features, and by encouraging their reuse, APIs with similar functional blocks can provide the same features as others. For example, functionality to navigate and/or edit lists of things is present in many APIs, but currently exposed through many different interfaces. By reusing a generic feature for lists, a client designed for the list feature can use any of those APIs as opposed to only one. This means we can focus our descriptive efforts on features rather than APIs, and the description of features can be reused across APIs. In addition, features can be tested and evaluated for performance under varying circumstances, such that API designers can estimate the impact of incorporating a certain feature, whereas this currently only surfaces after implementation and usage.</p>
+ 
+		<p>The <a href="https://openapis.org/">Open API Initiative</a> aims to create, develop, and promote an API description format based on the Swagger Specification. The BD2K API Interoperability working group has reviewed that standard by conducting a survey of metadata use in the real world (refer to Survey of API Metadata in the Wild section below), and has developed the smartAPI Specification as an extension of the Open API Initiative. The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. Examples of the 19 elements are category to which the API belongs, metadata format and access mode at the API metadata level, the parameter type and parameter value type at the operation parameter level, and the conformance to a specified response profile at the operation response level.</p> 
+ 
+		<p>Because every API currently requires unique hardcoded clients, the costs of development are consequently inflated and compatibility across APIs is hindered (Verborgh and Dumontier 2016). To address these shortcomings, the smartAPI Specification aims to establish a universal standard that can be employed by API developers.</p>				
       </p>
     </section>
+    
+    <section>
+     	<h2>Purpose of the smartAPI Specification</h2>
+
+		<p>The aim of the BD2K API Interoperability Working Group (a W3C Interest Group) is to develop a strategy for maximizing interoperability and reuse of web-based biomedical APIs. Topics of interest include API standards, API metadata requirements, Linking API Data, terminologies, hypermedia controls, matchmaking and workflows. The smartAPI initiative was established in June 2016.</p>
+ 
+		<p>The purpose of the smartAPI Specification is to establish a set of standards that will permit the community of API developers to produce interfaces that are consistent in format, facilitating more predictable and efficient communication between Web entities.</p>
+ 
+		<p>The smartAPI Specification is intended to be a ‘living’ document that will continue to be revised and improved via the input of API development community members.</p>		
+
+		<h3>Survey of API Metadata in the Wild</h3>
+ 		<p>This Standard is the result of a survey by the Working Group of existing metadata repositories and specifications that describe APIs. The following eight resources were surveyed:</p>
+ 
+ 		<ul><i>Repositories:</i>
+			<li><a href="http://biocatalogue.org">Biocatalogue</a>, a registry of biological web services with 1,184 services.</li>
+			<li><a href="http://www.programmableweb.com/apis/directory">Programmable Web</a>, a directory of internet-based APIs with over 15,000 API descriptions.</li>
+			<li><a href="https://bio.tools/">Tools & Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics with 2,331 entries.</li>
+		</ul>
+		<ul><i>Specifications:</i>
+			<li><a href="http://www.softwarediscoveryindex.org/">Minimal Information About a Software</a>, a key set of minimal fields can that provide maximum value when describing a software.</li>
+			<li><a href="http://smart-api.info/website/docs/specification/">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
+			<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md">openAPI Initiative</a>, created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described.</li>
+			<li><a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html#service-metadata">Semantic Automated Discovery and Integration</a>, a set of design patterns defining the behavior of data retrieval and/or analysis resources that must interoperate on the Semantic Web.</li>
+			<li><a href="https://schema.org/APIReference">schema.org API Reference</a>, a reference document for APIs as described by schema.org.
+		</ul>
+ 
+ 		<p>We subsequently aggregated all the metadata elements from all eight resources to produce a common list of 63 API metadata elements. We further divided these elements into five categories: 
+ 		<ul>
+ 		<li>API metadata: 20 elements</li>
+ 		<li>Service Provider metadata: six elements</li>
+ 		<li>API Operation metadata: 10 elements</li>
+ 		<li>Operation Parameter metadata: 12 elements</li>
+ 		<li>Operation Response metadata: six elements</li>
+ 		</ul>
+ 		</p>
+ 
+ 		<p>Next, we discussed each of the metadata field amongst the working group members to re-evaluate its applicability and relevance and further classified them into whether it MUST, SHOULD, or MAY be included in the API description. The cardinality and datatype of metadata field were further specified along with a description and example. The results of the survey are available <a href="https://goo.gl/wKR51W">here</a>. The key words "MUST", "SHOULD", and "MAY" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>	
+	</section>    
     
    <section>
       <h2>Audience</h2>
       <p>
-        
+        The target audience includes software developers, informatics-focused researchers, publishers of resource descriptions, and funding agencies.
       </p>
+    </section>
+    
+    <section> 
+    	<h2>Vision for the Implementation for the smartAPI specification</h2>
+		<p>The ultimate aim of the BD2K API Interoperability Working Group is to develop a strategy for maximizing interoperability and reuse of web-based biomedical APIs. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.</p>
+ 
+		<p>Information about the implementation of the smartAPI Specification and options for enhancing API interoperability is available <a href="https://docs.google.com/document/d/1Jr8a2R9CaxgpZoSrC6JeHFBg4x8SRBrxxsFc4_Ozzc8/edit#">here</a>.</p>
     </section>
     
     <section>
@@ -1281,5 +1341,50 @@ The list of possible responses as they are returned from executing this operatio
         The editors gratefully acknowledge the contributions made to this document by all members of the working group. 
       </p>
     </section>
+    
+    <section>
+     <h2>Appendix</h2>
+    <p>Relevant Standards
+    <ul>
+    	<li>Open description format for APIs (<a href="https://openapis.org/">https://openapis.org/</a>)</li>
+    	<li>W3C community group for hypermedia-driven APIs in RDF (<a href="http://www.hydra-cg.com/">http://www.hydra-cg.com/</a>)</li>
+		<li>Hydra hypermedia descriptions (<a href="https://www.hydra-cg.com/spec/latest/core/">https://www.hydra-cg.com/spec/latest/core/</a>)</li>
+		<li>SADI framework for semantic web services (<a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html">https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html</a>)</li>
+	</ul>
+	</p>
+ 
+    <p>APIs Represented
+ 	<ul>
+ 	<li>MyGene.info - aggregated high-performance gene annotation API</li>
+ 		<ul>
+			<li>API: http://mygene.info/v2/api/</li>
+         	<li>Docs: http://docs.mygene.info</li>
+		</ul>
+
+ 	<li>MyVariant.info - aggregated high-performance human variant annotation API</li>
+ 		<ul>
+			<li>API: http://myvariant.info/v1/api/</li>
+         	<li>Docs: http://docs.myvariant.info</li>
+		</ul> 
+ 	<li>Openlifedata.org - a portal to biomedical linked data</li>
+ 		<ul>
+			<li>API: http://apidocs.openlifedata.org/openlifedata</li>
+		</ul> 
+ 	<li>PrefixCommons.org - aggregated API for prefixes, identifiers, IRI’s and URLs</li>
+ 		<ul>
+			<li>API: http://api.prefixcommons.org</li>
+		</ul> 
+ 	<li>XNAT - Medical Imaging Data Management</li>
+ 		<ul>
+			<li>Docs: https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory</li>
+         	<li>API: https://central.xnat.org/</li>
+		</ul> 
+ 	<li>NDA - NIMH Data Archive Data Dictionary API</li>
+ 		<ul>
+			<li>API: https://ndar.nih.gov/api/datadictionary/v2/</li>
+ 		</ul>
+	</p>
+    </section>
+    
   </body>
 </html>
