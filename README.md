@@ -10,6 +10,8 @@ Chunlei Wu
 
 Amrapali Zaveri
 
+Kathleen Jagodnik
+
 ## Link
 
 https://amrapalijz.github.io/smartapi/
