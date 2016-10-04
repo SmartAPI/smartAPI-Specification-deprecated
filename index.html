@@ -58,10 +58,11 @@
                     company : "Stanford University, USA",
                     companyURL : "dumontierlab.stanford.edu"
                 },
-	        {
+                {
                     name : "Kathleen Jagodnik",
                     url : "mailto:kmjagodnik@gmail.com",
-                    company : "NASA Glenn Research Center, USA",
+                    company : "Icahn School of Medicine at Mount Sinai, USA",
+                    companyURL : "http://labs.icahn.mssm.edu/maayanlab/"
                 }
                 ],
 
@@ -143,7 +144,7 @@
 		
 		<p><i><u>Modular.</u></i> In order to facilitate the interaction between a client and different APIs, as well as the process to design and describe them, we propose to build Web APIs out of reusable features rather than as monolithic structures. A feature is an independent part of an interface that identifies, describes, and affords a certain kind of interaction across Web APIs. Through repositories of features, and by encouraging their reuse, APIs with similar functional blocks can provide the same features as others. For example, functionality to navigate and/or edit lists of things is present in many APIs, but currently exposed through many different interfaces. By reusing a generic feature for lists, a client designed for the list feature can use any of those APIs as opposed to only one. This means we can focus our descriptive efforts on features rather than APIs, and the description of features can be reused across APIs. In addition, features can be tested and evaluated for performance under varying circumstances, such that API designers can estimate the impact of incorporating a certain feature, whereas this currently only surfaces after implementation and usage.</p>
  
-		<p>The <a href="https://openapis.org/">Open API Initiative</a> aims to create, develop, and promote an API description format based on the Swagger Specification. The BD2K API Interoperability working group has reviewed that standard by conducting a survey of metadata use in the real world (refer to Survey of API Metadata in the Wild section below), and has developed the smartAPI Specification as an extension of the Open API Initiative. The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. Examples of the 19 elements are category to which the API belongs, metadata format and access mode at the API metadata level, the parameter type and parameter value type at the operation parameter level, and the conformance to a specified response profile at the operation response level.</p> 
+		<p>The <a href="https://openapis.org/" target="_blank">Open API Initiative</a> aims to create, develop, and promote an API description format based on the Swagger Specification. The BD2K API Interoperability working group has reviewed that standard by conducting a survey of metadata use in the real world (refer to Survey of API Metadata in the Wild section below), and has developed the smartAPI Specification as an extension of the Open API Initiative. The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. Examples of the 19 elements are category to which the API belongs, metadata format and access mode at the API metadata level, the parameter type and parameter value type at the operation parameter level, and the conformance to a specified response profile at the operation response level.</p> 
  
 		<p>Because every API currently requires unique hardcoded clients, the costs of development are consequently inflated and compatibility across APIs is hindered (Verborgh and Dumontier 2016). To address these shortcomings, the smartAPI Specification aims to establish a universal standard that can be employed by API developers.</p>				
       </p>
@@ -162,29 +163,28 @@
  		<p>This Standard is the result of a survey by the Working Group of existing metadata repositories and specifications that describe APIs. The following eight resources were surveyed:</p>
  
  		<ul><i>Repositories:</i>
-			<li><a href="http://biocatalogue.org">Biocatalogue</a>, a registry of biological web services with 1,184 services.</li>
-			<li><a href="http://www.programmableweb.com/apis/directory">Programmable Web</a>, a directory of internet-based APIs with over 15,000 API descriptions.</li>
-			<li><a href="https://bio.tools/">Tools & Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics with 2,331 entries.</li>
+			<li><a href="http://biocatalogue.org" target="_blank">Biocatalogue</a>, a registry of biological web services with 1,184 services.</li>
+			<li><a href="http://www.programmableweb.com/apis/directory" target="_blank">Programmable Web</a>, a directory of internet-based APIs with over 15,000 API descriptions.</li>
+			<li><a href="https://bio.tools/" target="_blank">Tools & Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics with 2,331 entries.</li>
 		</ul>
 		<ul><i>Specifications:</i>
-			<li><a href="http://www.softwarediscoveryindex.org/">Minimal Information About a Software</a>, a key set of minimal fields can that provide maximum value when describing a software.</li>
-			<li><a href="http://smart-api.info/website/docs/specification/">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
-			<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md">openAPI Initiative</a>, created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described.</li>
-			<li><a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html#service-metadata">Semantic Automated Discovery and Integration</a>, a set of design patterns defining the behavior of data retrieval and/or analysis resources that must interoperate on the Semantic Web.</li>
+			<li><a href="http://www.softwarediscoveryindex.org/" target="_blank">Minimal Information About a Software</a>, a key set of minimal fields can that provide maximum value when describing a software.</li>
+			<li><a href="http://smart-api.info/website/docs/specification/" target="_blank">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
+			<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md" target="_blank">openAPI Initiative</a>, created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described.</li>
+			<li><a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html#service-metadata" target="_blank">Semantic Automated Discovery and Integration</a>, a set of design patterns defining the behavior of data retrieval and/or analysis resources that must interoperate on the Semantic Web.</li>
 			<li><a href="https://schema.org/APIReference">schema.org API Reference</a>, a reference document for APIs as described by schema.org.
 		</ul>
  
  		<p>We subsequently aggregated all the metadata elements from all eight resources to produce a common list of 63 API metadata elements. We further divided these elements into five categories: 
  		<ul>
- 		<li>API metadata: 20 elements</li>
- 		<li>Service Provider metadata: six elements</li>
- 		<li>API Operation metadata: 10 elements</li>
- 		<li>Operation Parameter metadata: 12 elements</li>
- 		<li>Operation Response metadata: six elements</li>
- 		</ul>
+ 		   <li><a href="#apimd">API Metadata</a>: 20 elements</li>
+           <li><a href="#spmd">Service Provider Metadata</a>: 6 elements</li>
+           <li><a href="#aomd">API Operation Metadata</a>: 10 elements</li>
+           <li><a href="#opmd">Operation Parameter Metadata</a>: 12 elements</li>
+           <li><a href="#ormd">Operation Response Metadata</a>: 6 elements</li>   
  		</p>
  
- 		<p>Next, we discussed each of the metadata field amongst the working group members to re-evaluate its applicability and relevance and further classified them into whether it MUST, SHOULD, or MAY be included in the API description. The cardinality and datatype of metadata field were further specified along with a description and example. The results of the survey are available <a href="https://goo.gl/wKR51W">here</a>. The key words "MUST", "SHOULD", and "MAY" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>	
+ 		<p>Next, we discussed each of the metadata field amongst the working group members to re-evaluate its applicability and relevance and further classified them into whether it MUST, SHOULD, or MAY be included in the API description. The cardinality and datatype of metadata field were further specified along with a description and example. The results of the survey are available <a href="https://goo.gl/wKR51W" target="_blank">here</a>. The key words "MUST", "SHOULD", and "MAY" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a>.</p>	
 	</section>    
     
    <section>
@@ -198,38 +198,23 @@
     	<h2>Vision for the Implementation for the smartAPI specification</h2>
 		<p>The ultimate aim of the BD2K API Interoperability Working Group is to develop a strategy for maximizing interoperability and reuse of web-based biomedical APIs. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.</p>
  
-		<p>Information about the implementation of the smartAPI Specification and options for enhancing API interoperability is available <a href="https://docs.google.com/document/d/1Jr8a2R9CaxgpZoSrC6JeHFBg4x8SRBrxxsFc4_Ozzc8/edit#">here</a>.</p>
+		<p>Information about the implementation of the smartAPI Specification and options for enhancing API interoperability is available <a href="https://docs.google.com/document/d/1Jr8a2R9CaxgpZoSrC6JeHFBg4x8SRBrxxsFc4_Ozzc8/edit#" target="_blank">here</a>.</p>
     </section>
-    
-    <section>
-      <h2>Metadata Elements</h2>
-      <p>
-        Five Categories:
-        <ul>
-           <li><a href="#apimd">API Metadata</a></li>
-           <li><a href="#spmd">Service Provider Metadata</a></li>
-           <li><a href="#aomd">API Operation Metadata</a></li>
-           <li><a href="#opmd">Operation Parameter Metadata</a></li>
-           <li><a href="#ormd">Operation Response Metadata</a></li>           
-        </ul>
-      </p>
-    </section>
-    
-<script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
-<div class="buttonpanel">
-<form action=""><p>
-<input id="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
-<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
-<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
-<input id="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
-<input id="hide-json" onclick="show_syntaxes(bFSSVisible,false); set_display_by_id('hide-json','none'); set_display_by_id('show-json','');" style="display: none" type="button" value="Hide JSON in Examples" />
-<input id="show-json" onclick="show_syntaxes(bFSSVisible,true); set_display_by_id('hide-json',''); set_display_by_id('show-json','none');" type="button" value="Show JSON in Examples" />
-</p>
-</form>
-</div>    
    
     <section id="apimd">
       <h2>API Metadata</h2>
+      <script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+		<div class="buttonpanel">
+			<form action=""><p>
+				<input id="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
+				<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
+				<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
+				<input id="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
+				<input id="hide-json" onclick="show_syntaxes(bFSSVisible,false); set_display_by_id('hide-json','none'); set_display_by_id('show-json','');" style="display: none" type="button" value="Hide JSON in Examples" />
+				<input id="show-json" onclick="show_syntaxes(bFSSVisible,true); set_display_by_id('hide-json',''); set_display_by_id('show-json','none');" type="button" value="Show JSON in Examples" />
+				</p>
+			</form>
+		</div>    
       <p>
                     <table>
                         <thead>
@@ -293,7 +278,7 @@
                             <tr>
                                 <td><a href="#website">Website</a></td>
                                 <td>A web page that describes the API.</td>
-                                <td>SHOULD</td>
+                                <td>MAY</td>
                             </tr>
                             <tr>
                                 <td><a href="#publications">Publications</a></td>
@@ -1089,7 +1074,7 @@
         </pre>
        </p>
        <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
+		<p><img alt="May" border="0" height="60" src="must.jpg" width="60" /><br/></p>
 	    </div>
 	  </div> 
      </section>  
@@ -1291,7 +1276,7 @@ The list of possible responses as they are returned from executing this operatio
         </pre>
        </p>
        <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
+		<p><img alt="Should" border="0" height="60" src="may.jpg" width="80" /><br/></p>
 	    </div>
 	  </div> 
      </section>
@@ -1351,10 +1336,10 @@ The list of possible responses as they are returned from executing this operatio
      <h2>Appendix</h2>
     <p>Relevant Standards
     <ul>
-    	<li>Open description format for APIs (<a href="https://openapis.org/">https://openapis.org/</a>)</li>
-    	<li>W3C community group for hypermedia-driven APIs in RDF (<a href="http://www.hydra-cg.com/">http://www.hydra-cg.com/</a>)</li>
-		<li>Hydra hypermedia descriptions (<a href="https://www.hydra-cg.com/spec/latest/core/">https://www.hydra-cg.com/spec/latest/core/</a>)</li>
-		<li>SADI framework for semantic web services (<a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html">https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html</a>)</li>
+    	<li>Open description format for APIs (<a href="https://openapis.org/" target="_blank">https://openapis.org/</a>)</li>
+    	<li>W3C community group for hypermedia-driven APIs in RDF (<a href="http://www.hydra-cg.com/" target="_blank">http://www.hydra-cg.com/</a>)</li>
+		<li>Hydra hypermedia descriptions (<a href="https://www.hydra-cg.com/spec/latest/core/" target="_blank">https://www.hydra-cg.com/spec/latest/core/</a>)</li>
+		<li>SADI framework for semantic web services (<a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html" target="_blank">https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html</a>)</li>
 	</ul>
 	</p>
  
@@ -1362,31 +1347,31 @@ The list of possible responses as they are returned from executing this operatio
  	<ul>
  	<li>MyGene.info - aggregated high-performance gene annotation API</li>
  		<ul>
-			<li>API: http://mygene.info/v2/api/</li>
-         	<li>Docs: http://docs.mygene.info</li>
+			<li>API: <a href="http://mygene.info/v2/api/" target="_blank">http://mygene.info/v2/api/</a></li>
+         	<li>Docs: <a href="http://docs.mygene.info" target="_blank">http://docs.mygene.info</a></li>
 		</ul>
 
  	<li>MyVariant.info - aggregated high-performance human variant annotation API</li>
  		<ul>
-			<li>API: http://myvariant.info/v1/api/</li>
-         	<li>Docs: http://docs.myvariant.info</li>
+			<li>API: <a href="http://myvariant.info/v1/api/" target="_blank">http://myvariant.info/v1/api/</a></li>
+         	<li>Docs: <a href="http://docs.myvariant.info" target="_blank">http://docs.myvariant.info</a></li>
 		</ul> 
  	<li>Openlifedata.org - a portal to biomedical linked data</li>
  		<ul>
-			<li>API: http://apidocs.openlifedata.org/openlifedata</li>
+			<li>API: <a href="http://apidocs.openlifedata.org/openlifedata" target="_blank">http://apidocs.openlifedata.org/openlifedata</a></li>
 		</ul> 
  	<li>PrefixCommons.org - aggregated API for prefixes, identifiers, IRI’s and URLs</li>
  		<ul>
-			<li>API: http://api.prefixcommons.org</li>
+			<li>API: <a href="http://api.prefixcommons.org" target="_blank">http://api.prefixcommons.org</a></li>
 		</ul> 
  	<li>XNAT - Medical Imaging Data Management</li>
  		<ul>
-			<li>Docs: https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory</li>
-         	<li>API: https://central.xnat.org/</li>
+			<li>Docs: <a href="https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory" target="_blank">https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory</a></li>
+         	<li>API: <a href="https://central.xnat.org" target="_blank">https://central.xnat.org/</a></li>
 		</ul> 
  	<li>NDA - NIMH Data Archive Data Dictionary API</li>
  		<ul>
-			<li>API: https://ndar.nih.gov/api/datadictionary/v2/</li>
+			<li>API: <a href="https://ndar.nih.gov/api/datadictionary/v2/" target="_blank">https://ndar.nih.gov/api/datadictionary/v2/</a></li>
  		</ul>
 	</p>
     </section>
