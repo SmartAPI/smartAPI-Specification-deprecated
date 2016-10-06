@@ -83,6 +83,22 @@
           // Team Contact.
           wgPatentURI:  "",
           // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+           maxTocLevel : 2,
+           localBiblio : {
+                    "Verborgh2016" : {
+                        title : "A Web API ecosystem through feature-based reuse",
+                        authors : ["Ruben Verborgh", "Michel Dumontier"],
+                        date: "2016",
+                        href : "https://arxiv.org/abs/1609.07108"
+                    },
+                    "Wilkinson2016" : {
+                        title : "The FAIR Guiding Principles for scientific data management and stewardship",
+                        authors : [ "Mark D. Wilkinson", "Michel Dumontier", "IJsbrand Jan Aalbersberg", "Gabrielle Appleton", "Myles Axton", "Arie Baak", "Niklas Blomberg", "Jan-Willem Boiten", "Luiz Bonino da Silva Santos", "Philip E. Bourne", "Jildau Bouwman", "Anthony J. Brookes", "Tim Clark", "Mercè Crosas", "Ingrid Dillo", "Olivier Dumon", "Scott Edmunds", "Chris T. Evelo", "Richard Finkers", "Alejandra Gonzalez-Beltran", "Alasdair J.G. Gray", "Paul Groth", "Carole Goble", "Jeffrey S. Grethe", "Jaap Heringa", "Peter A.C ’t Hoen", "Rob Hooft", "Tobias Kuhn", "Ruben Kok", "Joost Kok", "Scott J. Lusher", "Maryann E. Martone", "Albert Mons", "Abel L. Packer", "Bengt Persson", "Philippe Rocca-Serra", "Marco Roos", "Rene van Schaik", "Susanna-Assunta Sansone", "Erik Schultes", "Thierry Sengstag", "Ted Slater", "George Strawn", "Morris A. Swertz", "Mark Thompson", "Johan van der Lei", "Erik van Mulligen", "Jan Velterop", "Andra Waagmeester", "Peter Wittenburg", "Katherine Wolstencroft", "Jun Zhao", "Barend Mons" ],
+                        date : "2016",
+                        status : "Scientific Data 3",
+                        href : "http://www.nature.com/articles/sdata201618"
+                    		}
+                		}       	
       };
     </script>
           <style type="text/css">
@@ -131,7 +147,7 @@
       <h2>Introduction</h2>
       <p>      
       	<h3>Vision for API Interoperability</h3>
-        <p>In 2001, Sir Tim Berners Lee and colleagues articulated a vision in which intelligent agents would be able to navigate a web of knowledge in order to achieve objectives set by both humans and machines. While a significant part of the effort to build a Semantic Web has been devoted to defining a common syntax and semantics for data, it is the behavior of web services or web Application Programming Interfaces (APIs) to respond to requests in a manner that enables autonomous discovery and reuse that has been largely neglected. Here, we build on this vision for autonomous computing by setting out a technical roadmap that identifies essential behaviours to make web services FAIR - Findable, Accessible, Interoperable, and Reusable.</p>
+        <p>In 2001, Sir Tim Berners Lee and colleagues articulated a vision in which intelligent agents would be able to navigate a web of knowledge in order to achieve objectives set by both humans and machines. While a significant part of the effort to build a Semantic Web has been devoted to defining a common syntax and semantics for data, it is the behavior of web services or web Application Programming Interfaces (APIs) to respond to requests in a manner that enables autonomous discovery and reuse that has been largely neglected. Here, we build on this vision for autonomous computing by setting out a technical roadmap that identifies essential behaviours to make web services FAIR - Findable, Accessible, Interoperable, and Reusable [[Wilkinson2016]].</p>
  
 		<p><i><u>Self-Describing.</u></i> Knowledge of what the service offers and how to invoke it is essential to its reuse. Additional metadata, such as licensing, version, request and response formats, and forums for support, are also important practical considerations. However, few web APIs reliably provide such a description, thereby forcing agents to look for and sift through documentation. Similarly, the results of a service often lack hypermedia controls in their responses that explicitly indicate further interactions - whether paging through results or invoking another operation on any one of the results. Towards addressing these issues, we recommend the following actions:
 		Provide structured and standardized machine readable metadata for the API, operations, parameters, and response. (e.g. openAPI initiative, DCAT)
@@ -146,7 +162,7 @@
  
 		<p>The <a href="https://openapis.org/" target="_blank">Open API Initiative</a> aims to create, develop, and promote an API description format based on the Swagger Specification. The BD2K API Interoperability working group has reviewed that standard by conducting a survey of metadata use in the real world (refer to Survey of API Metadata in the Wild section below), and has developed the smartAPI Specification as an extension of the Open API Initiative. The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. Examples of the 19 elements are category to which the API belongs, metadata format and access mode at the API metadata level, the parameter type and parameter value type at the operation parameter level, and the conformance to a specified response profile at the operation response level.</p> 
  
-		<p>Because every API currently requires unique hardcoded clients, the costs of development are consequently inflated and compatibility across APIs is hindered (Verborgh and Dumontier 2016). To address these shortcomings, the smartAPI Specification aims to establish a universal standard that can be employed by API developers.</p>				
+		<p>Because every API currently requires unique hardcoded clients, the costs of development are consequently inflated and compatibility across APIs is hindered [[Verborgh2016]]. To address these shortcomings, the smartAPI Specification aims to establish a universal standard that can be employed by API developers.</p>				
       </p>
     </section>
     
