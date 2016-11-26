@@ -158,7 +158,7 @@
   <body>
     <section id='abstract'>
       <p>
-        At present, no universal and comprehensive standard exists for the design of APIs. Consequently, development costs are inflated and communication between APIs is hindered. The Big Data to Knowledge (BD2K) API Interoperability Working Group (a W3C Interest Group) has developed the smartAPI Specification, a standard for API development that will facilitate the efficient communication among APIs and reduce development costs. This Specification document describes five categories of API metadata elements related to APIs, service providers, API operations, operation parameters, and operation responses. For each category, the metadata elements that are mandatory, recommended, or optional are described. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.
+        This document presents a set of 54 metadata elements (organized into five categories) to usefully describe Web-based Application Programming Interfaces (APIs). These elements were developed by the Big Data to Knowledge (BD2K) API Interoperability Working Group, which conducted a survey of API metadata used in the real world. This group developed the smartAPI Specification as an extension of existing repositories such as Programmable Web, Biocatalogue, and available standards including Open API, schema.org, etc. The aim of the BD2K API Interoperability Working Group is to develop a strategy for maximizing interoperability and reuse of Web-based APIs. This specification aims to serve as a standard for API development that will facilitate the efficient communication among APIs and reduce development costs. The smartAPI Specification includes 21 metadata elements beyond those included in the Open API Initiative. The metadata elements are grouped into categories related to APIs, service providers, API operations, operation parameters, and operation responses. For each category, the metadata elements that are mandatory, recommended, or optional are described and illustrated by examples. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.
       </p>
     </section>
     
@@ -167,14 +167,7 @@
         You need to have a custom SotD paragraph. Maybe give a succinct description of your spec's status.
       </p>
     </section>
-    
-    <section>
-      <h1>Abstract</h1>
-      <p>      
-	This document presents a set of 53 metadata elements (organized into five categories) to usefully describe Web-based Application Programming Interfaces (APIs). These elements were developed by the Big Data to Knowledge (BD2K) API Interoperability Working Group, which conducted a survey of API metadata used in the real world. This group developed the smartAPI Specification as an extension of existing repositories such as Programmable Web, Biocatalogue, and available standards including Open API, schema.org, etc. The aim of the BD2K API Interoperability Working Group is to develop a strategy for maximizing interoperability and reuse of Web-based APIs. This specification aims to serve as a standard for API development that will facilitate the efficient communication among APIs and reduce development costs. The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. The metadata elements are grouped into categories related to APIs, service providers, API operations, operation parameters, and operation responses. For each category, the metadata elements that are mandatory, recommended, or optional are described and illustrated by examples. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.
-      </p>
-    </section>
-    
+        
     <section>
      	<h1>Purpose of the smartAPI Specification</h1>
 
@@ -200,17 +193,17 @@
 			<li><a href="https://schema.org/APIReference">schema.org API Reference</a>, a reference document for APIs as described by schema.org.
 		</ul>
  		
- 		<p>The smartAPI Specification includes 21 metadata elements beyond those included in the Open API Initiative. Examples of the 21 elements are the category to which the API belongs; metadata format and access mode at the API metadata level; the parameter type and parameter value type at the operation parameter level; and the conformance to a specified response profile at the operation response level.</p>
+ 		<p>The smartAPI Specification includes 19 metadata elements beyond those included in the Open API Initiative. Examples of the 21 elements are the category to which the API belongs; metadata format and access mode at the API metadata level; the parameter type and parameter value type at the operation parameter level; and the conformance to a specified response profile at the operation response level.</p>
 		
 		<p>We subsequently aggregated all the metadata elements from the eight resources to produce a common list of 54 API metadata elements. We subsequently divided these elements into five categories:</p>
  
  		<ul>
  		   <li><a href="#apimd">API Metadata</a>: 20 elements</li>
            <li><a href="#spmd">Service Provider Metadata</a>: 6 elements</li>
-           <li><a href="#aomd">API Operation Metadata</a>: 12 elements</li>
-           <li><a href="#opmd">Operation Parameter Metadata</a>: 10 elements</li>
+           <li><a href="#aomd">API Operation Metadata</a>: 10 elements</li>
+           <li><a href="#opmd">Operation Parameter Metadata</a>: 12 elements</li>
            <li><a href="#ormd">Operation Response Metadata</a>: 6 elements</li>   
- 		</p>
+ 		</ul>
  
  		<p>Next, we discussed each of the metadata field amongst the working group members to re-evaluate its applicability and relevance and further classified them into whether it MUST, SHOULD, or MAY be included in the API description. The cardinality and datatype of metadata field were further specified along with a description and example. The results of the survey are available <a href="https://goo.gl/wKR51W" target="_blank">here</a>. The key words "MUST", "SHOULD", and "MAY" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a>.</p>	
 	</section>    
@@ -231,8 +224,6 @@
 				<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
 				<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
 				<input id="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
-				<input id="hide-json" onclick="show_syntaxes(bFSSVisible,false); set_display_by_id('hide-json','none'); set_display_by_id('show-json','');" style="display: none" type="button" value="Hide JSON in Examples" />
-				<input id="show-json" onclick="show_syntaxes(bFSSVisible,true); set_display_by_id('hide-json',''); set_display_by_id('show-json','none');" type="button" value="Show JSON in Examples" />
 				</p>
 			</form>
 		</div>    
