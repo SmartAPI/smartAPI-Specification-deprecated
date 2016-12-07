@@ -248,7 +248,7 @@
 	  </div>       
      </section>
      
-    <section id="access-point">     
+    <section id="accessPoint">     
       <h3>Access Point</h3>
       <td>The base URI for interacting with the API.</td>
       <ul>
@@ -286,7 +286,7 @@
 	  </div>  
      </section>
 
-     <section id="response-mime-type">     
+     <section id="responseMimeType">     
       <h3>Response Mime-Type</h3>
       <td>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</td>
       <ul>
@@ -343,7 +343,7 @@
 	  </div>  
      </section>     
 
-     <section id="terms-of-service">     
+     <section id="termsOfService">     
       <h3>Terms of Service</h3>
       <td>A document that describes the terms of use for the API.</td>
       <ul>
@@ -362,7 +362,7 @@
 	  </div>  
      </section>
      
-     <section id="ssl-support">     
+     <section id="sslSupport">     
       <h3>SSL Support</h3>
       <td>Indication of whether SSL Support is present or absent.</td>
       <ul>
@@ -381,7 +381,7 @@
 	  </div>  
      </section>     
 
-     <section id="authentication-mode">     
+     <section id="authenticationMode">     
       <h3>Authentication Mode</h3>
       <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
       <ul>
@@ -457,7 +457,7 @@
 	  </div> 
      </section>
      
-     <section id="access-restrictions">     
+     <section id="accessRestrictions">     
       <h3>API Access Restrictions</h3>
       <td>Indicate whether there are restrictions to using the API</td>
       <ul>
@@ -476,7 +476,7 @@
 	  </div> 
      </section>
 
-    <section id="social-media-links">     
+    <section id="socialMediaLinks">     
       <h3>Social Media Links</h3>
       <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
       <ul>
@@ -496,7 +496,7 @@
 	  </p>
      </section>     
     
-     <section id="access-point-mirrors">     
+     <section id="accessPointMirrors">     
       <h3>Access Point Mirrors</h3>
       <td>URL of the mirror that the API is available at.</td>
       <ul>
@@ -515,7 +515,7 @@
 	  </div> 
      </section>
      
-     <section id="api-metadata-format">     
+     <section id="apiMetadataFormat">     
       <h3>API Metadata Format</h3>
       <td>Service specification format.</td>
       <ul>
@@ -534,7 +534,7 @@
 	  </div> 
      </section>                                                                           
     
-     <section id="api-access-mode">     
+     <section id="apiAccessMode">     
       <h3>API Access Mode</h3>
       <td>The protocols used to access the API</td>
       <ul>
@@ -553,7 +553,7 @@
 	  </div> 
      </section>
          
-     <section id="api-location">     
+     <section id="apiLocation">     
       <h3>API Location</h3>
       <td>Location, city and country of the API.</td>
       <ul>
@@ -572,7 +572,7 @@
 	  </div> 
      </section>
          
-     <section id="api-implementation-language">     
+     <section id="apiImplementationLanguage">     
       <h3>API Implementation Language</h3>
       <td>Language the API was written in.</td>
       <ul>
@@ -591,7 +591,7 @@
 	  </div> 
      </section>
          
-     <section id="api-maturity">     
+     <section id="apiMaturity">     
       <h3>API Maturity</h3>
       <td>Maturity of the API.</td>
       <ul>
@@ -617,7 +617,7 @@
     <section id="spmd">
       <h2>Service Provider Metadata</h2>
       <p>
-     <section id="responsible-organization">     
+     <section id="responsibleOrganization">     
       <h3>Responsible Organization</h3>
       <td>The identifying name of the contact person/organization.</td>
       <ul>
@@ -636,7 +636,7 @@
 	  </div> 
      </section>
 
-     <section id="responsible-developer">     
+     <section id="responsibleDeveloper">     
       <h3>Responsible Developer</h3>
       <td>Name of the developer (User ORCID ID/Name)</td>
       <ul>
@@ -655,7 +655,7 @@
 	  </div> 
      </section>   
      
-     <section id="contact-email">     
+     <section id="contactEmail">     
       <h3>Contact Email</h3>
       <td>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</td>
       <ul>
@@ -712,7 +712,7 @@
 	  </div> 
      </section>        
 
-     <section id="developer-forum">     
+     <section id="developerForum">     
       <h3>Developer Forum</h3>
       <td>Forum or Mailing list.</td>
       <ul>
@@ -736,7 +736,7 @@
     <section id="aomd">
       <h2>API Operation Metadata</h2>
       <p>
-     <section id="operation-title">     
+     <section id="operationTitle">     
       <h3>Operation Title</h3>
       <td>Title of the operation. A unique identifier of the operation.</td>
       <ul>
@@ -754,7 +754,7 @@
 	    </div>
 	  </div> 
      </section>     
-     <section id="operation-description">     
+     <section id="operationDescription">     
       <h3>Operation Description</h3>
       <td>Description of the operation.</td>
       <ul>
@@ -772,7 +772,7 @@
 	    </div>
 	  </div> 
      </section>
-     <section id="http-method">     
+     <section id="consumes">     
       <h3>Consumes</h3>
       <td>A list of MIME types the operation can consume.</td>
       <ul>
@@ -790,7 +790,7 @@
 	    </div>
 	  </div> 
      </section>
-     <section id="http-method">     
+     <section id="httpMethod">     
       <h3>http Method</h3>
       <td>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL. The object describes the operations available on a single path. The different operations are"get, put, post, delete, options head, patch".</td>
       <ul>
@@ -809,7 +809,7 @@
 	  </div> 
      </section>
      
-     <section id="authentication-mode">     
+     <section id="authenticationMode">     
       <h3>Authentication Mode</h3>
       <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
       <ul>
@@ -828,7 +828,7 @@
 	  </div> 
      </section>     
      
-     <section id="authentication-mode">     
+     <section id="authenticationMode">     
       <h3>Transfer Protocol</h3>
       <td>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". This optional value will override the top-level schemes if present.</td>
       <ul>
@@ -866,7 +866,7 @@
 	  </div> 
      </section>
      
-     <section id="path-template">     
+     <section id="pathTemplate">     
       <h3>Path Template</h3>
       <td>The path for the operation.</td>
        <ul>
@@ -885,7 +885,7 @@
 	  </div> 
      </section>     
                
-     <section id="operation-id">     
+     <section id="operationId">     
       <h3>Operation ID</h3>
       <td>An identifier/URI for the operation.</td>
       <ul>
@@ -904,7 +904,7 @@
 	  </div> 
      </section>
      
-     <section id="operation-documentation">     
+     <section id="operationDocumentation">     
       <h3>Operation Documentation</h3>
       <td>Documentation of the particular operation.</td>
       <ul>
@@ -923,7 +923,7 @@
 	  </div> 
      </section>
 
-     <section id="access-restrictions">     
+     <section id="accessRestrictions">     
       <h3>Access Restrictions</h3>
       <td>Access restrictions to invoke the operation.</td>
        <ul>
@@ -967,7 +967,7 @@
       <h2>Operation Parameter Metadata</h2>
       <p>
 
-     <section id="operation-parameter-name">     
+     <section id="operationParameterName">     
       <h3>Operation Parameter Name</h3>
       <td>Name of the operation parameter.</td>
       <ul>
@@ -986,7 +986,7 @@
 	  </div> 
      </section>  
           
-     <section id="operation-parameter-name">     
+     <section id="operationParameterName">     
       <h3>Operation Parameter Description</h3>
       <td>Description of operation parameter.</td>
       <div class="example">
@@ -1100,7 +1100,7 @@
 	  </div> 
      </section>   
      
-     <section id="data-format">     
+     <section id="dataFormat">     
       <h3>Data Format</h3>
       <td>Input/Output data format.</td>
       <ul>
@@ -1119,7 +1119,7 @@
 	  </div> 
      </section>  
      
-     <section id="default-value">     
+     <section id="defaultValue">     
       <h3>Default Value</h3>
       <td>Default value for each input/output.</td>
       <ul>
@@ -1138,7 +1138,7 @@
 	  </div> 
      </section> 
      
-     <section id="example-value">     
+     <section id="exampleValue">     
       <h3>Example Value</h3>
       <td>Example value for each input/output.</td>
       <ul>
@@ -1163,7 +1163,7 @@
       <h2>Operation Response Metadata</h2>
       <p>
   
-    <section id="response-format">     
+    <section id="responseFormat">     
       <h3>Response Format</h3>
       <td>A list of MIME types the APIs can consume. <a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#mediaTypes" target="_blank">Here</a> are some examples of MIME types.</td>
       <ul>
@@ -1182,7 +1182,7 @@
 	  </div> 
      </section>
 
-    <section id="example-response-value">     
+    <section id="exampleResponseValue">     
       <h3>Example Response Value</h3>
       <td>An example of the response value.</td>
         <ul>
@@ -1201,7 +1201,7 @@
 	  </div> 
      </section>
           
-    <section id="response-header">     
+    <section id="responseHeader">     
       <h3>Response Header</h3>
       <td>A list of headers that are sent with the response.</td>
       <ul>
@@ -1220,7 +1220,7 @@
 	  </div> 
      </section>
                
-     <section id="response-code">     
+     <section id="responseCode">     
       <h3>Response Code</h3>
       <td>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
 The list of possible responses as they are returned from executing this operation.</td>
@@ -1240,7 +1240,7 @@ The list of possible responses as they are returned from executing this operatio
 	  </div> 
      </section>
 
-    <section id="response-desc">     
+    <section id="responseDescription">     
       <h3>Response Description</h3>
       <td>A description of the response.</td>
       <ul>
@@ -1259,7 +1259,7 @@ The list of possible responses as they are returned from executing this operatio
 	  </div> 
      </section>
      
-    <section id="response-profile">     
+    <section id="responseProfile">     
       <h3>Response Profile</h3>
       <td>Conformance to a specified format.</td>
       <ul>
