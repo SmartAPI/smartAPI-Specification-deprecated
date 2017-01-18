@@ -363,7 +363,7 @@
      </section>
      
      <section id="sslSupport">     
-      <h3>SSL Support</h3>
+      <h3>SSL Support*</h3>
       <td>Indication of whether SSL Support is present or absent.</td>
       <ul>
   		<li>Cardinality: 0..1</li>
@@ -401,7 +401,7 @@
      </section>
      
      <section id="category">     
-      <h3>Category</h3>
+      <h3>Category*</h3>
       <td>Primary category that the API belongs to.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -439,7 +439,7 @@
      </section>
           
      <section id="publications">     
-      <h3>Publications</h3>
+      <h3>Publications*</h3>
       <td>Publication ID/URL</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -458,7 +458,7 @@
      </section>
      
      <section id="apiAccessRestrictions">     
-      <h3>API Access Restrictions</h3>
+      <h3>API Access Restrictions*</h3>
       <td>Indicate whether there are restrictions to using the API</td>
       <ul>
   		<li>Cardinality: 0..1</li>
@@ -477,7 +477,7 @@
      </section>
 
     <section id="socialMediaLinks">     
-      <h3>Social Media Links</h3>
+      <h3>Social Media Links*</h3>
       <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -497,7 +497,7 @@
      </section>     
     
      <section id="accessPointMirrors">     
-      <h3>Access Point Mirrors</h3>
+      <h3>Access Point Mirrors*</h3>
       <td>URL of the mirror that the API is available at.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -516,7 +516,7 @@
      </section>
      
      <section id="apiMetadataFormat">     
-      <h3>API Metadata Format</h3>
+      <h3>API Metadata Format*</h3>
       <td>Service specification format.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -535,7 +535,7 @@
      </section>                                                                           
     
      <section id="apiAccessMode">     
-      <h3>API Access Mode</h3>
+      <h3>API Access Mode*</h3>
       <td>The protocols used to access the API</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -554,7 +554,7 @@
      </section>
          
      <section id="apiLocation">     
-      <h3>API Location</h3>
+      <h3>API Location*</h3>
       <td>Location, city and country of the API.</td>
       <ul>
   		<li>Cardinality: 0..1</li>
@@ -573,7 +573,7 @@
      </section>
          
      <section id="apiImplementationLanguage">     
-      <h3>API Implementation Language</h3>
+      <h3>API Implementation Language*</h3>
       <td>Language the API was written in.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -592,7 +592,7 @@
      </section>
          
      <section id="apiMaturity">     
-      <h3>API Maturity</h3>
+      <h3>API Maturity*</h3>
       <td>Maturity of the API.</td>
       <ul>
   		<li>Cardinality: 0..1</li>
@@ -675,7 +675,7 @@
      </section>   
 
      <section id="contributor">     
-      <h3>Contributor</h3>
+      <h3>Contributor*</h3>
       <td>Contributor person or institute</td>
       <ul>
   		<li>Cardinality: 0..1</li>
@@ -694,7 +694,7 @@
      </section>        
 
      <section id="funding">     
-      <h3>Funding</h3>
+      <h3>Funding*</h3>
       <td>Source of funding.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -713,7 +713,7 @@
      </section>        
 
      <section id="developerForum">     
-      <h3>Developer Forum</h3>
+      <h3>Developer Forum*</h3>
       <td>Forum or Mailing list.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -737,7 +737,7 @@
       <h2>API Operation Metadata</h2>
       <p>
      <section id="operationTitle">     
-      <h3>Operation Title</h3>
+      <h3>Operation Title*</h3>
       <td>Title of the operation. A unique identifier of the operation.</td>
       <ul>
   		<li>Cardinality: 1..1</li>
@@ -867,7 +867,7 @@
      </section>
      
      <section id="pathTemplate">     
-      <h3>Path Template</h3>
+      <h3>Path Template*</h3>
       <td>The path for the operation.</td>
        <ul>
   		<li>Cardinality: 0..n</li>
@@ -924,7 +924,7 @@
      </section>
 
      <section id="accessRestrictions">     
-      <h3>Access Restrictions</h3>
+      <h3>Access Restrictions*</h3>
       <td>Access restrictions to invoke the operation.</td>
        <ul>
   		<li>Cardinality: 0..1</li>
@@ -943,7 +943,7 @@
      </section>
      
      <section id="collection">     
-      <h3>Collection</h3>
+      <h3>Collection*</h3>
       <td>Names of collections of which the resource is a part e.g. a suite, library etc.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -1025,7 +1025,7 @@
      </section>  
      
      <section id="parameterType">     
-      <h3>Parameter Type</h3>
+      <h3>Parameter Type*</h3>
       <td>Type of parameter.</td>
        <ul>
   		<li>Cardinality: 0..n</li>
@@ -1044,7 +1044,7 @@
      </section>  
      
      <section id="parameterValueType">     
-      <h3>Parameter Value Type</h3>
+      <h3>Parameter Value Type*</h3>
       <td>Type of the value of the particular parameter.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
@@ -1260,7 +1260,7 @@ The list of possible responses as they are returned from executing this operatio
      </section>
      
     <section id="responseProfile">     
-      <h3>Response Profile</h3>
+      <h3>Response Profile*</h3>
       <td>Conformance to a specified format.</td>
       <ul>
   		<li>Cardinality: 0..n</li>
