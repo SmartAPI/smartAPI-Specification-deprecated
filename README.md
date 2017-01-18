@@ -14,7 +14,7 @@ Gabor Korodi, Harvard Medical School, USA
 
 ## Link
 
-https://amrapalijz.github.io/smartapi/
+websmartapi.github.io/smartapi/
 
 ## Credits
 
