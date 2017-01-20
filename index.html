@@ -179,13 +179,14 @@
 	<section>
 	<h1>Survey of API Metadata in the Wild</h1>
  		<p>This standard is the result of a survey by the BD2K API Interoperability Working Group of existing metadata repositories and specifications that describe APIs. The following eight resources were surveyed:</p>
- 
- 		<ul>Repositories:
+ 		Repositories:
+ 		<ul>
 			<li><a href="http://biocatalogue.org" target="_blank">Biocatalogue</a>, a registry of biological web services with 1,184 services.</li>
 			<li><a href="http://www.programmableweb.com/apis/directory" target="_blank">Programmable Web</a>, a directory of internet-based APIs with over 15,000 API descriptions.</li>
 			<li><a href="https://bio.tools/" target="_blank">Tools and Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics with 2,331 entries.</li>
 		</ul>
-		<ul>Specifications:
+		Specifications:
+		<ul>
 			<li><a href="http://www.softwarediscoveryindex.org/" target="_blank">Minimal Information About a Software</a>, a key set of minimal fields can that provide maximum value when describing a software.</li>
 			<li><a href="http://smart-api.info/website/docs/specification/" target="_blank">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
 			<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md" target="_blank">openAPI Initiative</a>, created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described.</li>
@@ -219,7 +220,7 @@
       <h2>API Metadata Elements</h2>
       <script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
 		<div class="buttonpanel">
-			<form action=""><p>
+			<form action="#"><p>
 				<input id="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
 				<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
 				<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
@@ -228,8 +229,8 @@
 			</form>
 		</div>    
       <p>
-            
-     <section id="name">     
+	  </section> 
+    <section id="name">     
       <h3>Name</h3>
       <p>A human readable label for the API.</p>
       <ul>
@@ -249,7 +250,7 @@
      
     <section id="accessPoint">     
       <h3>Access Point</h3>
-      <td>The base URI for interacting with the API.</td>
+      <p>The base URI for interacting with the API.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: URI</li>
@@ -267,7 +268,7 @@
 
      <section id="desc">     
       <h3>Description</h3>
-      <td>A human readable description of the service functionality.</td>
+      <p>A human readable description of the service functionality.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -285,7 +286,7 @@
 
      <section id="responseMimeType">     
       <h3>Response Mime-Type</h3>
-      <td>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</td>
+      <p>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -303,7 +304,7 @@
 
      <section id="documentation">     
       <h3>Documentation</h3>
-      <td>Documentation page URL for the API.</td>
+      <p>Documentation page URL for the API.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -321,7 +322,7 @@
      
      <section id="version">     
       <h3>Version</h3>
-      <td>The version of the API.</td>
+      <p>The version of the API.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -339,7 +340,7 @@
 
      <section id="#termsOfService">     
       <h3>Terms of Service</h3>
-      <td>A document that describes the terms of use for the API.</td>
+      <p>A document that describes the terms of use for the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -357,7 +358,7 @@
      
      <section id="sslSupport">     
       <h3>SSL Support*</h3>
-      <td>Indication of whether SSL Support is present or absent.</td>
+      <p>Indication of whether SSL Support is present or absent.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: boolean</li>
@@ -375,7 +376,7 @@
 
      <section id="authenticationMode">     
       <h3>Authentication Mode</h3>
-      <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
+      <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: URI</li>
@@ -393,7 +394,7 @@
      
      <section id="category">     
       <h3>Category*</h3>
-      <td>Primary category that the API belongs to.</td>
+      <p>Primary category that the API belongs to.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -411,7 +412,7 @@
                                       
      <section id="website">     
       <h3>Website</h3>
-      <td>A web page that describes the API.</td>
+      <p>A web page that describes the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: URI</li>
@@ -429,7 +430,7 @@
           
      <section id="publications">     
       <h3>Publications*</h3>
-      <td>Publication ID/URL</td>
+      <p>Publication ID/URL</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -447,7 +448,7 @@
      
      <section id="apiAccessRestrictions">     
       <h3>API Access Restrictions*</h3>
-      <td>Indicate whether there are restrictions to using the API</td>
+      <p>Indicate whether there are restrictions to using the API</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -465,7 +466,7 @@
 
     <section id="socialMediaLinks">     
       <h3>Social Media Links*</h3>
-      <td>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</td>
+      <p>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -483,7 +484,7 @@
     
      <section id="accessPointMirrors">     
       <h3>Access Point Mirrors*</h3>
-      <td>URL of the mirror that the API is available at.</td>
+      <p>URL of the mirror that the API is available at.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -501,7 +502,7 @@
      
      <section id="apiMetadataFormat">     
       <h3>API Metadata Format*</h3>
-      <td>Service specification format.</td>
+      <p>Service specification format.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -519,7 +520,7 @@
     
      <section id="apiAccessMode">     
       <h3>API Access Mode*</h3>
-      <td>The protocols used to access the API</td>
+      <p>The protocols used to access the API</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -537,7 +538,7 @@
          
      <section id="apiLocation">     
       <h3>API Location*</h3>
-      <td>Location, city and country of the API.</td>
+      <p>Location, city and country of the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: URI</li>
@@ -555,7 +556,7 @@
          
      <section id="apiImplementationLanguage">     
       <h3>API Implementation Language*</h3>
-      <td>Language the API was written in.</td>
+      <p>Language the API was written in.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -573,7 +574,7 @@
          
      <section id="apiMaturity">     
       <h3>API Maturity*</h3>
-      <td>Maturity of the API.</td>
+      <p>Maturity of the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: enum</li>
@@ -588,14 +589,13 @@
 	    </div>
 	  </div> 
     </section>
-   </section>
    
     <section id="spmd">
       <h2>Service Provider Metadata</h2>
       <p>
      <section id="responsibleOrganization">     
       <h3>Responsible Organization</h3>
-      <td>The identifying name of the contact person/organization.</td>
+      <p>The identifying name of the contact person/organization.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -613,7 +613,7 @@
 
      <section id="responsibleDeveloper">     
       <h3>Responsible Developer</h3>
-      <td>Name of the developer (User ORCID ID/Name)</td>
+      <p>Name of the developer (User ORCID ID/Name)</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: URI</li>
@@ -631,7 +631,7 @@
      
      <section id="contactEmail">     
       <h3>Contact Email</h3>
-      <td>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</td>
+      <p>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: email</li>
@@ -649,7 +649,7 @@
 
      <section id="contributor">     
       <h3>Contributor*</h3>
-      <td>Contributor person or institute</td>
+      <p>Contributor person or institute</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -667,7 +667,7 @@
 
      <section id="funding">     
       <h3>Funding*</h3>
-      <td>Source of funding.</td>
+      <p>Source of funding.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -685,7 +685,7 @@
 
      <section id="developerForum">     
       <h3>Developer Forum*</h3>
-      <td>Forum or Mailing list.</td>
+      <p>Forum or Mailing list.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -707,7 +707,7 @@
       <p>
      <section id="operationTitle">     
       <h3>Operation Title*</h3>
-      <td>Title of the operation. A unique identifier of the operation.</td>
+      <p>Title of the operation. A unique identifier of the operation.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -724,7 +724,7 @@
      </section>     
      <section id="operationDescription">     
       <h3>Operation Description</h3>
-      <td>Description of the operation.</td>
+      <p>Description of the operation.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -741,7 +741,7 @@
      </section>
      <section id="consumes">     
       <h3>Consumes</h3>
-      <td>A list of MIME types the operation can consume.</td>
+      <p>A list of MIME types the operation can consume.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -758,7 +758,7 @@
      </section>
      <section id="httpMethod">     
       <h3>http Method</h3>
-      <td>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL. The object describes the operations available on a single path. The different operations are"get, put, post, delete, options head, patch".</td>
+      <p>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL. The object describes the operations available on a single path. The different operations are"get, put, post, delete, options head, patch".</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -774,9 +774,9 @@
 	  </div> 
      </section>
      
-     <section id="authenticationMode">     
+     <section id="operationAuthenticationMode">     
       <h3>Authentication Mode</h3>
-      <td>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</td>
+      <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -794,7 +794,7 @@
      
      <section id="transferProtocol">     
       <h3>Transfer Protocol</h3>
-      <td>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". This optional value will override the top-level schemes if present.</td>
+      <p>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". This optional value will override the top-level schemes if present.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string0</li>
@@ -812,7 +812,7 @@
 
      <section id="keywords">     
       <h3>Keywords</h3>
-      <td>Keywords describing the operation.</td>
+      <p>Keywords describing the operation.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -830,7 +830,7 @@
      
      <section id="pathTemplate">     
       <h3>Path Template*</h3>
-      <td>The path for the operation.</td>
+      <p>The path for the operation.</p>
        <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -848,7 +848,7 @@
                
      <section id="operationID">     
       <h3>Operation ID</h3>
-      <td>An identifier/URI for the operation.</td>
+      <p>An identifier/URI for the operation.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -866,7 +866,7 @@
      
      <section id="operationDocumentation">     
       <h3>Operation Documentation</h3>
-      <td>Documentation of the particular operation.</td>
+      <p>Documentation of the particular operation.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -884,7 +884,7 @@
 
      <section id="accessRestrictions">     
       <h3>Access Restrictions*</h3>
-      <td>Access restrictions to invoke the operation.</td>
+      <p>Access restrictions to invoke the operation.</p>
        <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -902,7 +902,7 @@
      
      <section id="collection">     
       <h3>Collection*</h3>
-      <td>Names of collections of which the resource is a part e.g. a suite, library etc.</td>
+      <p>Names of collections of which the resource is a part e.g. a suite, library etc.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -925,7 +925,7 @@
 
      <section id="operationParameterName">     
       <h3>Operation Parameter Name</h3>
-      <td>Name of the operation parameter.</td>
+      <p>Name of the operation parameter.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -943,7 +943,7 @@
           
      <section id="operationParameterDescription">     
       <h3>Operation Parameter Description</h3>
-      <td>Description of operation parameter.</td>
+      <p>Description of operation parameter.</p>
       <div class="example">
        <ul>
   		<li>Cardinality: 1..1</li>
@@ -961,7 +961,7 @@
 
      <section id="location">     
       <h3>Location</h3>
-      <td>Determines the location of the parameter.</td>
+      <p>Determines the location of the parameter.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
@@ -979,7 +979,7 @@
      
      <section id="parameterType">     
       <h3>Parameter Type*</h3>
-      <td>Type of parameter.</td>
+      <p>Type of parameter.</p>
        <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -997,7 +997,7 @@
      
      <section id="parameterValueType">     
       <h3>Parameter Value Type*</h3>
-      <td>Type of the value of the particular parameter.</td>
+      <p>Type of the value of the particular parameter.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -1015,7 +1015,7 @@
  
      <section id="min">     
       <h3>Min</h3>
-      <td>Minimum occurrence of the parameter.</td>
+      <p>Minimum occurrence of the parameter.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: integer</li>
@@ -1033,7 +1033,7 @@
 
      <section id="max">     
       <h3>Max</h3>
-      <td>Maximum occurrence of the parameter.</td>
+      <p>Maximum occurrence of the parameter.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: integer</li>
@@ -1051,7 +1051,7 @@
      
      <section id="dataFormat">     
       <h3>Data Format</h3>
-      <td>Input/Output data format.</td>
+      <p>Input/Output data format.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -1069,7 +1069,7 @@
      
      <section id="defaultValue">     
       <h3>Default Value</h3>
-      <td>Default value for each input/output.</td>
+      <p>Default value for each input/output.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -1087,7 +1087,7 @@
      
      <section id="exampleValue">     
       <h3>Example Value</h3>
-      <td>Example value for each input/output.</td>
+      <p>Example value for each input/output.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -1110,7 +1110,7 @@
   
     <section id="responseFormat">     
       <h3>Response Format</h3>
-      <td>A list of MIME types the APIs can consume. <a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#mediaTypes" target="_blank">Here</a> are some examples of MIME types.</td>
+      <p>A list of MIME types the APIs can consume. <a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#mediaTypes" target="_blank">Here</a> are some examples of MIME types.</p>
       <ul>
   		<li>Cardinality: 1..n</li>
   		<li>Datatype: string</li>
@@ -1128,7 +1128,7 @@
 
     <section id="exampleResponseValue">     
       <h3>Example Response Value</h3>
-      <td>An example of the response value.</td>
+      <p>An example of the response value.</p>
         <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: integer</li>
@@ -1146,7 +1146,7 @@
           
     <section id="responseHeader">     
       <h3>Response Header</h3>
-      <td>A list of headers that are sent with the response.</td>
+      <p>A list of headers that are sent with the response.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: object</li>
@@ -1164,8 +1164,8 @@
                
      <section id="responseCode">     
       <h3>Response Code</h3>
-      <td>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
-The list of possible responses as they are returned from executing this operation.</td>
+      <p>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
+The list of possible responses as they are returned from executing this operation.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: integer</li>
@@ -1183,7 +1183,7 @@ The list of possible responses as they are returned from executing this operatio
 
     <section id="responseDescription">     
       <h3>Response Description</h3>
-      <td>A description of the response.</td>
+      <p>A description of the response.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
@@ -1201,7 +1201,7 @@ The list of possible responses as they are returned from executing this operatio
      
     <section id="responseProfile">     
       <h3>Response Profile*</h3>
-      <td>Conformance to a specified format.</td>
+      <p>Conformance to a specified format.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
@@ -1227,45 +1227,58 @@ The list of possible responses as they are returned from executing this operatio
     
     <section>
      <h2>Appendix</h2>
-    <p>Relevant Standards
-    <ul>
-    	<li>Open description format for APIs (<a href="https://openapis.org/" target="_blank">https://openapis.org/</a>)</li>
-    	<li>W3C community group for hypermedia-driven APIs in RDF (<a href="http://www.hydra-cg.com/" target="_blank">http://www.hydra-cg.com/</a>)</li>
+     <p>Relevant Standards
+    	<ul>
+    		<li>Open description format for APIs (<a href="https://openapis.org/" target="_blank">https://openapis.org/</a>)</li>
+    		<li>W3C community group for hypermedia-driven APIs in RDF (<a href="http://www.hydra-cg.com/" target="_blank">http://www.hydra-cg.com/</a>)</li>
 		<li>Hydra hypermedia descriptions (<a href="https://www.hydra-cg.com/spec/latest/core/" target="_blank">https://www.hydra-cg.com/spec/latest/core/</a>)</li>
 		<li>SADI framework for semantic web services (<a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html" target="_blank">https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html</a>)</li>
 	</ul>
  
     <p>APIs Represented
  	<ul>
- 	<li>MyGene.info - aggregated high-performance gene annotation API</li>
- 		<ul>
+ 			<li>MyGene.info - aggregated high-performance gene annotation API</li>
+		<li>
+		   <ul>
 			<li>API: <a href="http://mygene.info/v2/api/" target="_blank">http://mygene.info/v2/api/</a></li>
-         	<li>Docs: <a href="http://docs.mygene.info" target="_blank">http://docs.mygene.info</a></li>
-		</ul>
+         		<li>Docs: <a href="http://docs.mygene.info" target="_blank">http://docs.mygene.info</a></li>
+		   </ul>
+		</li>
 
- 	<li>MyVariant.info - aggregated high-performance human variant annotation API</li>
- 		<ul>
+ 			<li>MyVariant.info - aggregated high-performance human variant annotation API</li>
+ 		<li>
+		<ul>
 			<li>API: <a href="http://myvariant.info/v1/api/" target="_blank">http://myvariant.info/v1/api/</a></li>
-         	<li>Docs: <a href="http://docs.myvariant.info" target="_blank">http://docs.myvariant.info</a></li>
+         		<li>Docs: <a href="http://docs.myvariant.info" target="_blank">http://docs.myvariant.info</a></li>
 		</ul> 
- 	<li>Openlifedata.org - a portal to biomedical linked data</li>
- 		<ul>
+		</li>
+ 			<li>Openlifedata.org - a portal to biomedical linked data</li>
+ 		<li>
+		<ul>
 			<li>API: <a href="http://apidocs.openlifedata.org/openlifedata" target="_blank">http://apidocs.openlifedata.org/openlifedata</a></li>
 		</ul> 
- 	<li>PrefixCommons.org - aggregated API for prefixes, identifiers, IRI’s and URLs</li>
- 		<ul>
+		</li>
+		 	<li>PrefixCommons.org - aggregated API for prefixes, identifiers, IRI’s and URLs</li>
+ 		<li>
+		<ul>
 			<li>API: <a href="http://api.prefixcommons.org" target="_blank">http://api.prefixcommons.org</a></li>
-		</ul> 
- 	<li>XNAT - Medical Imaging Data Management</li>
- 		<ul>
+		</ul>
+		</li>
+ 			<li>XNAT - Medical Imaging Data Management</li>
+ 		<li>
+		<ul>
 			<li>Docs: <a href="https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory" target="_blank">https://wiki.xnat.org/display/XNAT16/XNAT+REST+API+Directory</a></li>
-         	<li>API: <a href="https://central.xnat.org" target="_blank">https://central.xnat.org/</a></li>
+         		<li>API: <a href="https://central.xnat.org" target="_blank">https://central.xnat.org/</a></li>
 		</ul> 
- 	<li>NDA - NIMH Data Archive Data Dictionary API</li>
- 		<ul>
+		</li>
+ 			<li>NDA - NIMH Data Archive Data Dictionary API</li>
+ 		<li>
+		<ul>
 			<li>API: <a href="https://ndar.nih.gov/api/datadictionary/v2/" target="_blank">https://ndar.nih.gov/api/datadictionary/v2/</a></li>
  		</ul>
+		</li>
 	    </ul>
 	  </section>
   </body>
 </html>
+
