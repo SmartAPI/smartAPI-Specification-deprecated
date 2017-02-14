@@ -979,7 +979,7 @@
      
      <section id="parameterType">     
       <h3>Parameter Type*</h3>
-      <p>Type of parameter.</p>
+      <p>Type of the parameter in terms of its role in the operation.</p>
        <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
@@ -997,15 +997,15 @@
      
      <section id="parameterValueType">     
       <h3>Parameter Value Type*</h3>
-      <p>Type of the value of the particular parameter.</p>
+      <p>Semantic identifiers of particular parameters, retreived from identifiers.org</p>
       <ul>
-  		<li>Cardinality: 0..n</li>
+  		<li>Cardinality: array of URIs</li>
   		<li>Datatype: string</li>
 	  </ul>  
       <div class="example">
        <p>
        <pre class="highlight"> 
-          "parameterValueType": "enterzgene" 
+          "parameter value type": "http://identifiers.org/ensembl"; "http://identifiers.org/ncbigene"
         </pre>
        <div class="image">
 		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
