@@ -156,13 +156,13 @@
         </style>  
   </head>
   <body>
-    <section id='abstract'>
+    <section name='abstract'>
       <p>
         This document presents a set of 54 metadata elements (organized into five categories) to usefully describe Web-based Application Programming Interfaces (APIs). These elements were developed by the Big Data to Knowledge (BD2K) API Interoperability Working Group, which conducted a survey of API metadata used in the real world. This group developed the smartAPI Specification as an extension of existing repositories such as Programmable Web, Biocatalogue, and available standards including Open API, schema.org, etc. The aim of the BD2K API Interoperability Working Group is to develop a strategy for maximizing interoperability and reuse of Web-based APIs. This specification aims to serve as a standard for API development that will facilitate the efficient communication among APIs and reduce development costs. The smartAPI Specification includes 21 metadata elements beyond those included in the Open API Initiative. The metadata elements are grouped into categories related to APIs, service providers, API operations, operation parameters, and operation responses. For each category, the metadata elements that are mandatory, recommended, or optional are described and illustrated by examples. The widespread adoption of the smartAPI Specification by the community promises to improve the efficiency and lower the costs of API development, promoting cross-API compatibility and resolving current challenges in API usage.
       </p>
     </section>
     
-    <section id='sotd'>
+    <section name='sotd'>
       <p>
         You need to have a custom SotD paragraph. Maybe give a succinct description of your spec's status.
       </p>
@@ -216,21 +216,21 @@
       </p>
     </section>
        
-    <section id="apimd">
+    <section name="apimd">
       <h2>API Metadata Elements</h2>
       <script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
 		<div class="buttonpanel">
 			<form action="#"><p>
-				<input id="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
-				<input id="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
-				<input id="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
-				<input id="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
+				<input name="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
+				<input name="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
+				<input name="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
+				<input name="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
 				</p>
 			</form>
 		</div>    
       <p>
 
-    <section id="name">     
+    <section name="name">     
       <h3>Name</h3>
       <p>A human readable label for the API.</p>
       <ul>
@@ -249,7 +249,7 @@
 	  </div>       
      </section>
      
-    <section id="accessPoint">     
+    <section name="accessPoint">     
       <h3>Access Point</h3>
       <p>The base URI for interacting with the API.</p>
       <ul>
@@ -268,7 +268,7 @@
 	  </div>    
      </section>
 
-     <section id="desc">     
+     <section name="desc">     
       <h3>Description</h3>
       <p>A human readable description of the service functionality.</p>
       <ul>
@@ -287,7 +287,7 @@
 	  </div>  
      </section>
 
-     <section id="responseMimeType">     
+     <section name="responseMimeType">     
       <h3>Response Mime-Type</h3>
       <p>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</p>
       <ul>
@@ -306,7 +306,7 @@
 	  </div>  
      </section>
 
-     <section id="documentation">     
+     <section name="documentation">     
       <h3>Documentation</h3>
       <p>Documentation page URL for the API.</p>
       <ul>
@@ -325,7 +325,7 @@
 	  </div>  
      </section>
      
-     <section id="version">     
+     <section name="version">     
       <h3>Version</h3>
       <p>The version of the API.</p>
       <ul>
@@ -344,7 +344,7 @@
 	  </div>  
      </section>     
 
-     <section id="termsOfService">     
+     <section name="termsOfService">     
       <h3>Terms of Service</h3>
       <p>A document that describes the terms of use for the API.</p>
       <ul>
@@ -363,7 +363,7 @@
 	  </div>  
      </section>
      
-     <section id="sslSupport">     
+     <section name="sslSupport">     
       <h3>SSL Support*</h3>
       <p>Indication of whether SSL Support is present or absent.</p>
       <ul>
@@ -381,7 +381,7 @@
 	  </div>  
      </section>     
 
-     <section id="authenticationMode">     
+     <section name="authenticationMode">     
       <h3>Authentication Mode</h3>
       <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
       <ul>
@@ -400,7 +400,7 @@
 	  </div>  
      </section>
      
-     <section id="category">     
+     <section name="category">     
       <h3>Category*</h3>
       <p>Primary category that the API belongs to.</p>
       <ul>
@@ -418,7 +418,7 @@
 	  </div> 
      </section>
                                       
-     <section id="website">     
+     <section name="website">     
       <h3>Website</h3>
       <p>A web page that describes the API.</p>
       <ul>
@@ -437,7 +437,7 @@
 	  </div> 
      </section>
           
-     <section id="publications">     
+     <section name="publications">     
       <h3>Publications*</h3>
       <p>Publication ID/URL</p>
       <ul>
@@ -455,7 +455,7 @@
 	  </div> 
      </section>
      
-     <section id="apiAccessRestrictions">     
+     <section name="apiAccessRestrictions">     
       <h3>API Access Restrictions*</h3>
       <p>Indicate whether there are restrictions to using the API</p>
       <ul>
@@ -473,7 +473,7 @@
 	  </div> 
      </section>
 
-    <section id="socialMediaLinks">     
+    <section name="socialMediaLinks">     
       <h3>Social Media Links*</h3>
       <p>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</p>
       <ul>
@@ -491,7 +491,7 @@
 	  </div> 
      </section>     
     
-     <section id="accessPointMirrors">     
+     <section name="accessPointMirrors">     
       <h3>Access Point Mirrors*</h3>
       <p>URL of the mirror that the API is available at.</p>
       <ul>
@@ -509,7 +509,7 @@
 	  </div> 
      </section>
      
-     <section id="apiMetadataFormat">     
+     <section name="apiMetadataFormat">     
       <h3>API Metadata Format*</h3>
       <p>Service specification format.</p>
       <ul>
@@ -527,7 +527,7 @@
 	  </div> 
      </section>                                                                           
     
-     <section id="apiAccessMode">     
+     <section name="apiAccessMode">     
       <h3>API Access Mode*</h3>
       <p>The protocols used to access the API</p>
       <ul>
@@ -545,7 +545,7 @@
 	  </div> 
      </section>
          
-     <section id="apiLocation">     
+     <section name="apiLocation">     
       <h3>API Location*</h3>
       <p>Location, city and country of the API.</p>
       <ul>
@@ -563,7 +563,7 @@
 	  </div> 
      </section>
          
-     <section id="apiImplementationLanguage">     
+     <section name="apiImplementationLanguage">     
       <h3>API Implementation Language*</h3>
       <p>Language the API was written in.</p>
       <ul>
@@ -581,7 +581,7 @@
 	  </div> 
      </section>
          
-     <section id="apiMaturity">     
+     <section name="apiMaturity">     
       <h3>API Maturity*</h3>
       <p>Maturity of the API.</p>
       <ul>
@@ -599,10 +599,10 @@
 	  </div> 
     </section>
  </section>  
-    <section id="spmd">
+    <section name="spmd">
       <h2>Service Provider Metadata</h2>
       <p>
-     <section id="responsibleOrganization">     
+     <section name="responsibleOrganization">     
       <h3>Responsible Organization</h3>
       <p>The identifying name of the contact person/organization.</p>
       <ul>
@@ -621,7 +621,7 @@
 	  </div> 
      </section>
 
-     <section id="responsibleDeveloper">     
+     <section name="responsibleDeveloper">     
       <h3>Responsible Developer</h3>
       <p>Name of the developer (User ORCID ID/Name)</p>
       <ul>
@@ -639,7 +639,7 @@
 	  </div> 
      </section>   
      
-     <section id="contactEmail">     
+     <section name="contactEmail">     
       <h3>Contact Email</h3>
       <p>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</p>
       <ul>
@@ -658,7 +658,7 @@
 	  </div> 
      </section>   
 
-     <section id="contributor">     
+     <section name="contributor">     
       <h3>Contributor*</h3>
       <p>Contributor person or institute</p>
       <ul>
@@ -676,7 +676,7 @@
 	  </div> 
      </section>        
 
-     <section id="funding">     
+     <section name="funding">     
       <h3>Funding*</h3>
       <p>Source of funding.</p>
       <ul>
@@ -694,7 +694,7 @@
 	  </div> 
      </section>        
 
-     <section id="developerForum">     
+     <section name="developerForum">     
       <h3>Developer Forum*</h3>
       <p>Forum or Mailing list.</p>
       <ul>
@@ -713,10 +713,10 @@
      </section>
     </section>    
    
-    <section id="aomd">
+    <section name="aomd">
       <h2>API Operation Metadata</h2>
       <p>
-     <section id="operationTitle">     
+     <section name="operationTitle">     
       <h3>Operation Title*</h3>
       <p>Title of the operation. A unique identifier of the operation.</p>
       <ul>
@@ -733,7 +733,7 @@
 	    </div>
 	  </div> 
      </section>     
-     <section id="operationDescription">     
+     <section name="operationDescription">     
       <h3>Operation Description</h3>
       <p>Description of the operation.</p>
       <ul>
@@ -751,7 +751,7 @@
 	    </div>
 	  </div> 
      </section>
-     <section id="consumes">     
+     <section name="consumes">     
       <h3>Consumes</h3>
       <p>A list of MIME types the operation can consume.</p>
       <ul>
@@ -769,7 +769,7 @@
 	    </div>
 	  </div> 
      </section>
-     <section id="httpMethod">     
+     <section name="httpMethod">     
       <h3>http Method</h3>
       <p>The base path on which the API is served, which is relative to the host. Or a relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended to the basePath in order to construct the full URL. The object describes the operations available on a single path. The different operations are"get, put, post, delete, options head, patch".</p>
       <ul>
@@ -788,7 +788,7 @@
 	  </div> 
      </section>
      
-     <section id="operationAuthenticationMode">     
+     <section name="operationAuthenticationMode">     
       <h3>Authentication Mode</h3>
       <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
       <ul>
@@ -807,7 +807,7 @@
 	  </div> 
      </section>     
      
-     <section id="transferProtocol">     
+     <section name="transferProtocol">     
       <h3>Transfer Protocol</h3>
       <p>The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". This optional value will override the top-level schemes if present.</p>
       <ul>
@@ -826,7 +826,7 @@
 	  </div> 
      </section> 
 
-     <section id="keywords">     
+     <section name="keywords">     
       <h3>Keywords</h3>
       <p>Keywords describing the operation.</p>
       <ul>
@@ -845,7 +845,7 @@
 	  </div> 
      </section>
      
-     <section id="pathTemplate">     
+     <section name="pathTemplate">     
       <h3>Path Template*</h3>
       <p>The path for the operation.</p>
        <ul>
@@ -863,7 +863,7 @@
 	  </div> 
      </section>     
                
-     <section id="operationID">     
+     <section name="operationID">     
       <h3>Operation ID</h3>
       <p>An identifier/URI for the operation.</p>
       <ul>
@@ -882,7 +882,7 @@
 	  </div> 
      </section>
      
-     <section id="operationDocumentation">     
+     <section name="operationDocumentation">     
       <h3>Operation Documentation</h3>
       <p>Documentation of the particular operation.</p>
       <ul>
@@ -901,7 +901,7 @@
 	  </div> 
      </section>
 
-     <section id="accessRestrictions">     
+     <section name="accessRestrictions">     
       <h3>Access Restrictions*</h3>
       <p>Access restrictions to invoke the operation.</p>
        <ul>
@@ -919,7 +919,7 @@
 	  </div> 
      </section>
      
-     <section id="collection">     
+     <section name="collection">     
       <h3>Collection*</h3>
       <p>Names of collections of which the resource is a part e.g. a suite, library etc.</p>
       <ul>
@@ -938,11 +938,11 @@
      </section>   
     </section>
    
-    <section id="opmd">
+    <section name="opmd">
       <h2>Operation Parameter Metadata</h2>
       <p>
 
-     <section id="operationParameterName">     
+     <section name="operationParameterName">     
       <h3>Operation Parameter Name</h3>
       <p>Name of the operation parameter.</p>
       <ul>
@@ -961,7 +961,7 @@
 	  </div> 
      </section>  
           
-     <section id="operationParameterDescription">     
+     <section name="operationParameterDescription">     
       <h3>Operation Parameter Description</h3>
       <p>Description of operation parameter.</p>
 	<p>OpenAPI element: <font size="3" face="verdana" color=green>bodyParameter.patternProperties.description</font></p>
@@ -980,7 +980,7 @@
 	  </div> 
      </section>  
 
-     <section id="location">     
+     <section name="location">     
       <h3>Location</h3>
       <p>Determines the location of the parameter.</p>
       <ul>
@@ -999,7 +999,7 @@
 	  </div> 
      </section>  
      
-     <section id="parameterType">     
+     <section name="parameterType">     
       <h3>Parameter Type*</h3>
       <p>Type of the parameter in terms of its role in the operation.</p>
        <ul>
@@ -1017,7 +1017,7 @@
 	  </div> 
      </section>  
      
-     <section id="parameterValueType">     
+     <section name="parameterValueType">     
       <h3>Parameter Value Type*</h3>
       <p>Semantic identifiers of particular parameters, retreived from identifiers.org</p>
       <ul>
@@ -1035,7 +1035,7 @@
 	  </div> 
      </section> 
  
-     <section id="min">     
+     <section name="min">     
       <h3>Min</h3>
       <p>Minimum occurrence of the parameter.</p>
       <ul>
@@ -1054,7 +1054,7 @@
 	  </div> 
      </section>  
 
-     <section id="max">     
+     <section name="max">     
       <h3>Max</h3>
       <p>Maximum occurrence of the parameter.</p>
       <ul>
@@ -1073,7 +1073,7 @@
 	  </div> 
      </section>   
      
-     <section id="dataFormat">     
+     <section name="dataFormat">     
       <h3>Data Format</h3>
       <p>Input/Output data format.</p>
       <ul>
@@ -1092,7 +1092,7 @@
 	  </div> 
      </section>  
      
-     <section id="defaultValue">     
+     <section name="defaultValue">     
       <h3>Default Value</h3>
       <p>Default value for each input/output.</p>
       <ul>
@@ -1111,7 +1111,7 @@
 	  </div> 
      </section> 
      
-     <section id="exampleValue">     
+     <section name="exampleValue">     
       <h3>Example Value</h3>
       <p>Example value for each input/output.</p>
       <ul>
@@ -1131,11 +1131,11 @@
      </section>  
     </section>
 
-    <section id="ormd">
+    <section name="ormd">
       <h2>Operation Response Metadata</h2>
       <p>
   
-    <section id="responseFormat">     
+    <section name="responseFormat">     
       <h3>Response Format</h3>
       <p>A list of MIME types the APIs can consume. <a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#mediaTypes" target="_blank">Here</a> are some examples of MIME types.</p>
       <ul>
@@ -1154,7 +1154,7 @@
 	  </div> 
      </section>
 
-    <section id="exampleResponseValue">     
+    <section name="exampleResponseValue">     
       <h3>Example Response Value</h3>
       <p>An example of the response value.</p>
         <ul>
@@ -1173,7 +1173,7 @@
 	  </div> 
      </section>
           
-    <section id="responseHeader">     
+    <section name="responseHeader">     
       <h3>Response Header</h3>
       <p>A list of headers that are sent with the response.</p>
       <ul>
@@ -1192,7 +1192,7 @@
 	  </div> 
      </section>
                
-     <section id="responseCode">     
+     <section name="responseCode">     
       <h3>Response Code</h3>
       <p>A container for the expected responses of an operation. The container maps a HTTP response code to the expected response. 
 	The list of possible responses as they are returned from executing this operation.</p>
@@ -1212,7 +1212,7 @@
 	  </div> 
      </section>
 
-    <section id="responseDescription">     
+    <section name="responseDescription">     
       <h3>Response Description</h3>
       <p>A description of the response.</p>
       <ul>
@@ -1230,8 +1230,8 @@
 	    </div>
 	  </div> 
      </section>
-     
-    <section id="responseProfile">     
+    
+    <section name="responseProfile">     
       <h3>Response Profile*</h3>
       <p>Conformance to a specified format.</p>
       <ul>
@@ -1247,9 +1247,10 @@
 		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
 	    </div>
 	  </div> 
+	  </div>
      </section>
 	
-    <section id="responseDatatype">     
+    <section name="responseDatatype">     
       <h3>Response Data Type*</h3>
       <p>Semantic annotation of the response using the smartAPI profiler.</p>
       <ul>
