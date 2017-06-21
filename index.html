@@ -2,39 +2,27 @@
 <html>
   <head>
     <title>smartAPI Specification</title>
-    <meta charset='utf-8'>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
-            async class='remove'></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 	<script type="text/javascript" src="https://www.w3.org/2007/OWL/toggles.js"></script>
     <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
-          specStatus:           "UNOFFICIAL",
-            previousPublishDate: "2017-05-01",
-  	    previousMaturity: "LC",
+          specStatus:          "WD",
+
           // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName:            "smartAPI",
-          
+          shortName:           "smartAPI",
+          subtitle:            "A specification for API metadata",
+		  copyrightStart:      "2015",
+          previousPublishDate: "2017-06-06",
+  	      previousMaturity:    "WD",
+		  
+		  github:              "https://github.com/websmartapi/",
+		  includePermalinks:   true,
+		  noRecTrack:          false,		  
           charterDisclosureURI : "https://www.w3.org/2004/01/pp-impl/64149/status",
 
-          // if your specification has a subtitle that goes below the main
-          // formal title, define it here
-          // subtitle   :  "an excellent document",
-
-          // if you wish the publication date to be other than the last modification, set this
-          // publishDate:  "2009-08-06",
-
-          // if the specification's copyright date is a range of years, specify
-          // the start date here:
-          // copyrightStart: "2005"
-
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-          // previousPublishDate:  "1977-03-15",
-          // previousMaturity:  "WD",
-
-          // if there a publicly available Editor's Draft, this is the link
-          // edDraftURI:           "http://berjon.com/",
+          edDraftURI:           "https://websmartapi.github.io/smartapi_specification/",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
@@ -44,9 +32,9 @@
           editors:            
           [ {
                     name : "Michel Dumontier",
-                    url : "mailto:michel.dumontier@stanford.edu",
-                    company : "Stanford University, USA",
-                    companyURL : "http://dumontierlab.stanford.edu"
+                    url : "mailto:michel.dumontier@maastrichtuniversity.nl",
+                    company : "Maastricht University, Netherlands",
+                    companyURL : "http://dumontierlab.com"
                 }, {
                     name : "Chunlei Wu",
                     url : "mailto:cwu@scripps.edu",
@@ -55,9 +43,9 @@
                 },
                 {
                     name : "Amrapali Zaveri",
-                    url : "mailto:amrapali@stanford.edu",
-                    company : "Stanford University, USA",
-                    companyURL : "http://dumontierlab.stanford.edu"
+                    url : "mailto:amrapali.zaveri@maastrichtuniversity.nl",
+                    company : "Maastricht University, Netherlands",
+                    companyURL : "http://dumontierlab.com"
                 },
                 {
                     name : "Kathleen Jagodnik",
@@ -94,21 +82,14 @@
 
 
           // name of the WG
-          wg:           "smartAPI",
+          wg:           "smartAPI Interoperability Working Group",
           
           // URI of the public WG page
-          wgURI:        "https://amrapalijz.github.io/smartapi/",
+          wgURI:        "https://websmartapi.github.io/smartapi_specification/",
           
           // name (without the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "spec-writers-anonymous",
-          
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI:  "",
-          // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+          // wgPublicList: "CFWG_API@list.nih.gov",
+         
            maxTocLevel : 2,
            localBiblio : {
                     "Verborgh2016" : {
@@ -127,7 +108,7 @@
                 		}       	
       };
     </script>
-          <style type="text/css">
+      <style type="text/css">
         table {
             border-collapse: collapse;
         }
@@ -154,7 +135,33 @@
         pre red {
             color: red;
         }
-        </style>  
+    </style>  
+	<script>
+function _esc(s) {	
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/>/g,'&gt;');
+    s = s.replace(/"/g,'&quot;');
+    s = s.replace(/</g,'&lt;');
+    return s;
+}
+
+function updateExample(doc, content) {
+  // perform transformations to make it render and prettier
+  content = unComment(doc, content);
+  content = _esc(content);
+  content = content.replace(/\*\*\*\*([^*]*)\*\*\*\*/g, '<span class="highlight">$1</span>');
+  content = content.replace(/####([^#]*)####/g, '<span class="comment">$1</span>');
+  return content ;
+}
+
+
+function unComment(doc, content) {
+  // perform transformations to make it render and prettier
+  content = content.replace(/<!--/, '');
+  content = content.replace(/-->/, '');
+  return content ;
+}
+	</script>
   </head>
   <body>
     <section id='abstract'>
@@ -165,16 +172,14 @@
     
     <section id='sotd'>
       <p>
-        You need to have a custom SotD paragraph. Maybe give a succinct description of your spec's status.
+        This document is a DRAFT that now includes a mapping to v2 and v3 of the OpenAPI specification. It correctly uses vendor extensions.  Comments can be provided to the <a href="mailto:CFWG_API@list.nih.gov">NIH CFWG API Mailing List</a>.
       </p>
     </section>
         
     <section>
      	<h1>Purpose of the smartAPI Specification</h1>
 
-		<p>The purpose of the smartAPI Specification is to establish a set of standards for the description of metadata elements and values for the description of Application Programming Interfaces (APIs). This document was produced by the Big Data To Knowledge (BD2K) API Interoperability Working Group, one of the NIH Commons Framework Pilot Working Groups. The BD2K API Interoperability Working Group first conducted a survey of API metadata found in existing repositories and guidelines (see <a href="https://amrapalijz.github.io/smartapi/#survey-of-api-metadata-in-the-wild">Section 2</a>), and subsequently developed the smartAPI Specification as an extension of the Open API Initiative. The <a href="https://www.openapis.org/">Open API Initiative</a> aims to create, develop, and promote an API description format based on the <a href="http://swagger.io/specification/">Swagger Specification</a>.</p>
-		
-		<p>The smartAPI Specification is intended to be a ‘living’ document that will continue to be revised and improved via the input of API development community members.</p>
+		<p>The purpose of the smartAPI Specification is to establish a set of standards for the description of metadata elements and values for the description of Application Programming Interfaces (APIs). This document was produced by the Big Data To Knowledge (BD2K) <a href="https://goo.gl/yVgWbD">API Interoperability Working Group</a>, one of the NIH Commons Framework Pilot Working Groups. The BD2K API Interoperability Working Group first conducted a survey of API metadata found in existing repositories and guidelines (see <a href="#survey-of-api-metadata-in-the-wild">Section 2</a>), and subsequently developed the smartAPI Specification as an extension of the Open API Initiative. The <a href="https://www.openapis.org/">Open API Initiative</a> aims to create, develop, and promote an API description format based on the <a href="http://swagger.io/specification/">Swagger Specification</a>.</p>
 	</section>
 	
 	<section>
@@ -182,14 +187,14 @@
  		<p>This standard is the result of a survey by the BD2K API Interoperability Working Group of existing metadata repositories and specifications that describe APIs. The following eight resources were surveyed:</p>
  		Repositories:
  		<ul>
-			<li><a href="http://biocatalogue.org" target="_blank">Biocatalogue</a>, a registry of biological web services with 1,184 services.</li>
-			<li><a href="http://www.programmableweb.com/apis/directory" target="_blank">Programmable Web</a>, a directory of internet-based APIs with over 15,000 API descriptions.</li>
-			<li><a href="https://bio.tools/" target="_blank">Tools and Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics with 2,331 entries.</li>
+			<li><a href="http://biocatalogue.org" target="_blank">Biocatalogue</a>, a registry of biological web services.</li>
+			<li><a href="http://www.programmableweb.com/apis/directory" target="_blank">Programmable Web</a>, a directory of internet-based APIs.</li>
+			<li><a href="https://bio.tools/" target="_blank">Tools and Data Services Registry</a>, a registry with information about analytical tools and data services for bioinformatics.</li>
 		</ul>
 		Specifications:
 		<ul>
 			<li><a href="http://www.softwarediscoveryindex.org/" target="_blank">Minimal Information About a Software</a>, a key set of minimal fields can that provide maximum value when describing a software.</li>
-			<li><a href="http://smart-api.info/website/docs/specification/" target="_blank">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
+			<li><a href="https://websmartapi.github.io/smartapi_specification/" target="_blank">smartAPI specification</a>, a specification that describes a semantically annotated web service that facilitates discovery and reuse of web-based API.</li>
 			<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md" target="_blank">openAPI Initiative</a>, created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described.</li>
 			<li><a href="https://rawgit.com/wilkinsonlab/SADI-Specification/master/SADI-W3C-Member-Submission.html#service-metadata" target="_blank">Semantic Automated Discovery and Integration</a>, a set of design patterns defining the behavior of data retrieval and/or analysis resources that must interoperate on the Semantic Web.</li>
 			<li><a href="https://schema.org/APIReference">schema.org API Reference</a>, a reference document for APIs as described by schema.org.
@@ -218,515 +223,336 @@
     </section>
        
     <section name="apimd">
-      <h2>API Metadata Elements</h2>
-      <script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
-		<div class="buttonpanel">
-			<form action="#"><p>
-				<input name="show-sd" onclick="set_display_by_class('div','image','none'); set_display_by_id('hide-sd',''); set_display_by_id('show-sd','none');" type="button" value="Hide Diagrams" />
-				<input name="hide-sd" onclick="set_display_by_class('div','image',''); set_display_by_id('hide-sd','none'); set_display_by_id('show-sd','');" style="display: none" type="button" value="Show Diagrams" />
-				<input name="hide-examples" onclick="set_display_by_class('div','example','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Examples" />
-				<input name="show-examples" onclick="set_display_by_class('div','example',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Examples" />
-				</p>
-			</form>
-		</div>    
-      <p>
+    <h2>API Metadata Elements</h2>
 
     <section name="name">     
-      <h3>Name</h3>
+      <h3>Name [MUST]</h3> 
       <p>A human readable label for the API.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
-	  </ul>  
-	    <p>OpenAPI element: <font size="3" face="verdana" color=green>info.title</font></p>
-      <div class="example">
-       <p>
-        <pre> 
-          "name": "MyGene.info API"
-        </pre>
-       <div class="image">
-		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br /></p>
-	    </div>
-	  </div>       
+	  </ul>
+	  <pre class="example">
+		info:<br/>
+		  title: mygene.info<br/>
+	  </pre>  
      </section>
-     
-    <section name="accessPoint">     
-      <h3>Access Point</h3>
-      <p>The base URI for interacting with the API.</p>
-      <ul>
-  		<li>Cardinality: 1..1</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>basePath</font></p>
-      <div class="example">
-       <p>
-        <pre> 
-          "access point": "http://mygene.info/"
-        </pre>
-       <div class="image">
-		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
-	    </div>
-	  </div>    
-     </section>
-
-     <section name="desc">     
-      <h3>Description</h3>
-      <p>A human readable description of the service functionality.</p>
+	 <section name="desc">     
+      <h3>Description [SHOULD]</h3>
+      <p>A human readable description of the service.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: string</li>
 	  </ul>   
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>info.description</font></p>
-      <div class="example">
-       <p>
-        <pre> 
-          "description": "Documentation of the MyGene.info Gene Query web services. Learn more about [MyGene.info](http://mygene.info/)"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
+	  <pre class="example">
+		info:<br/>
+		  description: MyGene.info is a high performance API for gene descriptions.
+      </pre>
      </section>
+	 
 
-     <section name="responseMimeType">     
-      <h3>Response Mime-Type</h3>
-      <p>A list of media types the APIs can produce. This is global to all APIs but can be overridden on specific API calls.</p>
+     <section name="descriptors">     
+      <h3>Descriptors [MAY]</h3>
+      <p>Keyword or concepts that describe the API.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
-	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>produces</font></p>
-      <div class="example">
-       <p>
-        <pre> 
-          "produces": "application/json"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
+	  </ul> 
+	  <pre class="example"> 
+        info:
+          x-keywords:
+            - genes
+            - http://semanticscience.org/resource/SIO_010035
+      </pre>
      </section>
-
-     <section name="externalDocs">     
-      <h3>External Docs</h3>
-      <p>Documentation page URL for the API.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: URI</li>
-	  </ul>       
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>externalDocs</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "documentation": "http://docs.mygene.info/en/v3/"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
-     </section>
-     
-     <section name="version">     
-      <h3>Version</h3>
-      <p>The version of the API.</p>
+	 
+	  <section name="version">     
+      <h3>Version [MUST]</h3>
+      <p>The version of the API. Specify API version using <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>. The major.minor portion of the semver (for example 3.0) SHALL designate the feature set. Typically, .patch versions address errors in the API metadata document, not the feature set.</p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
 	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>info.version</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "version": "2.0.0"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
-     </section>     
+      <pre class="example">
+		info:
+		  version: 2.0.0
+      </pre>
+     </section>  
 
      <section name="termsOfService">     
-      <h3>Terms of Service</h3>
-      <p>A document that describes the terms of use for the API.</p>
+      <h3>Terms of Service [MUST]</h3>
+      <p>A URL that describes the terms of use for the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
-  		<li>Datatype: string</li>
+  		<li>Datatype: URL</li>
 	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>info.termsOfService</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "terms of service": "http://mygene.info/terms/"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
+      <pre class="example">
+		info:<br>
+		  termsOfService: http://mygene.info/terms/
+      </pre>
      </section>
-     
-     <section name="sslSupport">     
-      <h3>SSL Support*</h3>
-      <p>Indication of whether SSL Support is present or absent.</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: boolean</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "ssl support": "yes"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
-     </section>     
 
-     <section name="authenticationMode">     
-      <h3>Authentication Mode</h3>
-      <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>securityDefinitions.basicAuth</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "authentication mode": "none"
-        </pre>
-       <div class="image">
-		<p><img alt="Should" border="0" height="60" src="should.jpg" width="80" /><br/></p>
-	    </div>
-	  </div>  
+     <section name="accessPoint">
+       <h3>Access Point [MUST]</h3>
+       <p>The base URL for the API upon which the path is added. Also include URL of mirrors that the API is available at.</p>
+       <ul>
+         <li>Cardinality: 0..1</li>
+         <li>Datatype: URL</li>
+       </ul>
+	  <pre class="example">
+		server:<br/>
+		  - url: http://mygene.info/v3/api
+		    description: Production server
+		  - url: https://mygene.info/v3/api
+			description: Fictional HTTPS Production server
+		  - url: http://mirror1.mygene.info/api
+			description: Fictional mirror
+      </pre>
      </section>
-     
-     <section name="category">     
-      <h3>Category*</h3>
-      <p>Primary category that the API belongs to.</p>
+	 
+     <section name="responseMimeType">     
+      <h3>Response Mime-Type [MUST]</h3>
+      <p>A list of media types the APIs can produce. The media type definitions SHOULD be in compliance with <a href="http://tools.ietf.org/html/rfc6838">RFC6838</a>.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: string</li>
 	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "category": "genetics"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
+	  <pre class="example">
+        components:<br/>
+          responses:<br/>
+            - content:<br/>
+              - application/json:
+      </pre>
      </section>
-                                      
+
+	 
      <section name="website">     
-      <h3>Website</h3>
+      <h3>Website [MAY]</h3>
       <p>A web page that describes the API.</p>
       <ul>
   		<li>Cardinality: 0..1</li>
   		<li>Datatype: URI</li>
 	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>host</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "website": "http://mygene.info/"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
+	  <pre class="example"> 
+        info:<br/>
+          x-homepage: http://mygene.info
+      </pre>
      </section>
-          
-     <section name="publications">     
-      <h3>Publications*</h3>
-      <p>Publication ID/URL</p>
+	 
+     <section name="documentation">     
+      <h3>Documentation [SHOULD]</h3>
+      <p>Additional documentation for the API.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "publications": "Wu C, MacLeod I, Su AI (2013) BioGPS and MyGene.info: organizing online, gene-centric information. Nucl. Acids Res. 41(D1): D561-D565."
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
+  		<li>Datatype: URL</li>
+	  </ul>       
+	  <pre class="example">
+		info:<br/>
+		  documentation: http://docs.mygene.info/en/v3/
+      </pre>
      </section>
-     
-     <section name="apiAccessRestrictions">     
-      <h3>API Access Restrictions*</h3>
-      <p>Indicate whether there are restrictions to using the API</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api access restrictions": "free"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-
-    <section name="socialMediaLinks">     
-      <h3>Social Media Links*</h3>
-      <p>Links to social media presence such as Twitter URL, facebook, LinkedIn etc.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "social media links": "Twitter: @mygeneinfo"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>     
-    
-     <section name="accessPointMirrors">     
-      <h3>Access Point Mirrors*</h3>
-      <p>URL of the mirror that the API is available at.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "access point mirrors": "http://mygene.info/v3/api/"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-     
-     <section name="apiMetadataFormat">     
-      <h3>API Metadata Format*</h3>
-      <p>Service specification format.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api metadata format": "openAPI" 
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>                                                                           
-    
-     <section name="apiAccessMode">     
-      <h3>API Access Mode*</h3>
-      <p>The protocols used to access the API</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api access mode": "REST"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-         
-     <section name="apiLocation">     
-      <h3>API Location*</h3>
-      <p>Location, city and country of the API.</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api location": "USA"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-         
-     <section name="apiImplementationLanguage">     
-      <h3>API Implementation Language*</h3>
-      <p>Language the API was written in.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api implementation language": "python"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-         
-     <section name="apiMaturity">     
-      <h3>API Maturity*</h3>
-      <p>Maturity of the API.</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: enum</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "api maturity": "stable"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-    </section>
- </section>  
-    <section name="spmd">
-      <h2>Service Provider Metadata</h2>
-      <p>
-     <section name="responsibleOrganization">     
-      <h3>Responsible Organization</h3>
-      <p>The identifying name of the contact person/organization.</p>
-      <ul>
-  		<li>Cardinality: 1..1</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>contact.url</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "responsible organization": "The Scripps Research Institute"
-        </pre>
-       <div class="image">
-		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>
-
-     <section name="responsibleDeveloper">     
-      <h3>Responsible Developer</h3>
-      <p>Name of the developer (User ORCID ID/Name)</p>
-      <ul>
-  		<li>Cardinality: 1..1</li>
-  		<li>Datatype: URI</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "responsible developer": "http://orcid.org/0000-0002-2629-6124"
-        </pre>
-       <div class="image">
-		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>   
-     
-     <section name="contactEmail">     
-      <h3>Contact Email</h3>
-      <p>An e-mail address where the provider of the service may be contacted. MUST be in the format of an email address.</p>
-      <ul>
-  		<li>Cardinality: 1..1</li>
-  		<li>Datatype: email</li>
-	  </ul>  
-	<p>OpenAPI element: <font size="3" face="verdana" color=green>contact.email</font></p>
-      <div class="example">
-       <p>
-       <pre> 
-          "contact email": "cwu@scripps.edu" 
-        </pre>
-       <div class="image">
-		<p><img alt="Must" border="0" height="60" src="must.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>   
-
-     <section name="contributor">     
-      <h3>Contributor*</h3>
-      <p>Contributor person or institute</p>
-      <ul>
-  		<li>Cardinality: 0..1</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "contributor": "Andrew Su"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>        
-
-     <section name="funding">     
-      <h3>Funding*</h3>
-      <p>Source of funding.</p>
-      <ul>
-  		<li>Cardinality: 0..n</li>
-  		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "funding": "NIH"
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
-     </section>        
 
      <section name="developerForum">     
-      <h3>Developer Forum*</h3>
+      <h3>Developer Forum [MAY]</h3>
       <p>Forum or Mailing list.</p>
       <ul>
   		<li>Cardinality: 0..n</li>
   		<li>Datatype: URI</li>
 	  </ul>        
-      <div class="example">
-       <p>
-       <pre> 
-          "developer forum": "https://bitbucket.org/sulab/mygene.hub" 
-        </pre>
-       <div class="image">
-		<p><img alt="May" border="0" height="60" src="may.jpg" width="60" /><br/></p>
-	    </div>
-	  </div> 
+      <pre class="example">
+       info:
+          x-developerForum: 
+            - https://bitbucket.org/sulab/mygene.hub
+      </pre>
+    </section>  
+	
+     <section name="authenticationMode">     
+      <h3>Security [SHOULD]</h3>
+      <p>Lists the required security schemes to execute this operation. The object can have multiple security schemes declared in it which are all required.</p>
+      <ul>
+  		<li>Cardinality: 0..1</li>
+  		<li>Datatype: URI</li>
+	  </ul>        
+	  <pre class="example">
+		security:<br/>
+		  - type: apikey
+		    name: api_key
+		    in: header
+      </pre>
      </section>
-    </section>    
+     
+
+
+     
+     <section name="apiAccessRestrictions">     
+      <h3>Access Restrictions [MAY]</h3>
+      <p>Indicate whether there are restrictions to using the API. Values to use: none, limited, fee.</p>
+      <ul>
+  		<li>Cardinality: 0..1</li>
+  		<li>Datatype: string</li>
+	  </ul>
+  	  <pre class="example"> 
+        info:<br/>
+          x-accessRestrictions: 
+           - none
+	  </pre>
+     </section>
+
+    <section name="socialMediaLinks">     
+      <h3>Social Media [MAY]</h3>
+      <p>Links to social media presence such as Twitter, Facebook, LinkedIn, GitHub, etc.</p>
+      <ul>
+  		<li>Cardinality: 0..n</li>
+  		<li>Datatype: URI</li>
+	  </ul>        
+    	<pre class="example"> 
+        info:<br/>
+          x-accounts:<br/>
+            - name: twitter<br/>
+              accountid: mygeneinfo<br/>
+        </pre>
+     </section>                                                                              
+         
+     <section name="apiLocation">     
+      <h3>Location [MAY]</h3>
+      <p>Location, city and country of the server hosting the API.</p>
+      <ul>
+  		<li>Cardinality: 0..1</li>
+  		<li>Datatype: URI</li>
+	  </ul>        
+    	<pre class="example"> 
+         server:<br/>
+           - url: http://mygene.info/v3/api<br/>
+             x-location: USA
+        </pre>
+     </section>
+
+     <section name="apiImplementationLanguage">     
+      <h3>Implementation Language [MAY]</h3>
+      <p>Language the API was written in.</p>
+      <ul>
+  		<li>Cardinality: 0..n</li>
+  		<li>Datatype: string</li>
+	  </ul>        
+  	  <pre class="example"> 
+        info:<br/>
+          x-implementationLanguage: python
+	  </pre>
+     </section>
+         
+     <section name="apiMaturity">     
+      <h3>Maturity [MAY]</h3>
+      <p>Maturity of the API. Values to use: development, production.</p>
+      <ul>
+  		<li>Cardinality: 0..1</li>
+  		<li>Datatype: enum</li>
+	  </ul>        
+  	  <pre class="example"> 
+        info:<br/>
+          x-maturity: production
+       </pre>
+    </section>
+
+     <section name="publications">     
+      <h3>Publications [MAY]</h3>
+      <p>Publications that describe the API.</p>
+      <ul>
+  		<li>Cardinality: 0..n</li>
+  		<li>Datatype: URI</li>
+	  </ul>        
+	  <pre class="example"> 
+        info:<br/>
+          x-publications: 
+            - https://doi.org/10.1093/nar/gks1114
+      </pre>
+     </section>	
+	
+     <section name="funding">     
+      <h3>Funding [MAY]</h3>
+      <p>Indicate sources of funding.</p>
+      <ul>
+  		<li>Cardinality: 0..n</li>
+  		<li>Datatype: string</li>
+	  </ul>        
+       <pre class="example"> 
+        info:<br/>
+          x-funding:<br/>
+            - name: National Institutes of Health
+              x-id: https://www.wikidata.org/wiki/Q390551
+              funding-id: HG008473
+	  </pre> 
+     </section>
+	</section>   
+    
+	<section name="spmd">
+      <h2>Service Provider Metadata</h2>
+      <p>
+     <section name="responsibleOrganization">     
+      <h3>Responsible Organization [MUST]</h3>
+      <p>Provide the name of the organization responsible for the service.</p>
+      <ul>
+  		<li>Cardinality: 1..n</li>
+  		<li>Datatype: string</li>
+	  </ul>
+  	  <pre class="example"> 
+        info:<br/>
+          contact:<br/>
+            - name: The Scripps Research Institute
+              x-id: https://www.wikidata.org/wiki/Q793867
+              x-role: responsible organization
+              url: http://www.scripps.edu/
+        </pre>
+     </section>
+
+     <section name="responsibleDeveloper">     
+      <h3>Responsible Developer [MUST]</h3>
+      <p>Provide the name, ID and email for the responsible developer. </p>
+      <ul>
+  		<li>Cardinality: 1..1</li>
+  		<li>Datatype: URI</li>
+	  </ul>        
+  	  <pre class="example"> 
+        info:<br/>
+          contact:<br/>
+            - name: Chunlei Wu
+              x-id: https://orcid.org/0000-0002-2629-6124
+              x-role: responsible developer
+              email: cwu@scripps.edu
+        </pre>
+     </section>
+
+     <section name="contributor">     
+      <h3>Contributor [MAY]</h3>
+      <p>Indicate any other contributor to the conception, development, or support of the API.</p>
+      <ul>
+  		<li>Cardinality: 0..1</li>
+  		<li>Datatype: string</li>
+	  </ul>        
+  	  <pre class="example"> 
+        info:<br/>
+          contact:<br/>
+            - name: Andrew Su
+              x-id: https://orcid.org/0000-0002-9859-4104
+              x-role: contributor
+              email: asu@scripps.edu
+	  </pre> 
+     </section>
+ </section>  
    
     <section name="aomd">
       <h2>API Operation Metadata</h2>
       <p>
      <section name="operationTitle">     
-      <h3>Operation Title*</h3>
-      <p>Title of the operation. A unique identifier of the operation.</p>
+      <h3>Operation Identifier</h3>
+      <p>A unique identifier for the operation. </p>
       <ul>
   		<li>Cardinality: 1..1</li>
   		<li>Datatype: string</li>
-	  </ul>        
-      <div class="example">
-       <p>
-        <pre> 
+	  </ul>
+  	  <pre class="example"> 
+        paths:
+          - get:
+             - 
           "operation title": "q"
         </pre>
        <div class="image">
