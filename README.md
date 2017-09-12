@@ -1,6 +1,6 @@
-# smartAPI Specification
+# smartAPI Specification v1
 
-The smartAPI specification specifies core and extended API metadata elements that are essential when describing APIs on the Web.
+The smartAPI specification specifies core and extended API metadata elements that are essential when describing APIs on the Web. This document is now deprecated. please see https://github.com/SmartAPI/smartAPI-Specification/tree/OpenAPI.next/versions for the latest OpenAPI compatible specification.
 
 ## Authors
 Michel Dumontier, Stanford University, USA
